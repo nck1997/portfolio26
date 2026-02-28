@@ -15,7 +15,7 @@ function initRotatingText() {
     const rotatingElement = document.querySelector('.title-rotating');
     if (!rotatingElement) return;
     
-    const titles = ['UX Content ', 'Content Systems ', 'AI Systems ', 'Your next '];
+    const titles = ['UX Content ', 'AI Systems '];
     let currentIndex = 0;
     
     function updateText() {
@@ -38,8 +38,8 @@ function initRotatingText() {
     rotatingElement.textContent = titles[0];
     rotatingElement.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     
-    // Rotate every 4.5 seconds (longer hold time)
-    setInterval(updateText, 4500);
+    // Rotate every 7 seconds
+    setInterval(updateText, 7000);
 }
 
 /**

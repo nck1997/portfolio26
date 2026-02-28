@@ -186,7 +186,7 @@ section {
 .title-rotating {
     display: inline-block;
     color: var(--color-accent);
-    min-width: 200px;
+    min-width: 150px;
     text-align: left;
 }
 
