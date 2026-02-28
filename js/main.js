@@ -4,7 +4,43 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
+    initRotatingText();
 });
+
+// ===========================
+// Rotating Text Animation
+// ===========================
+
+function initRotatingText() {
+    const rotatingElement = document.querySelector('.title-rotating');
+    if (!rotatingElement) return;
+    
+    const titles = ['UX Content ', 'AI Systems ', 'Your next '];
+    let currentIndex = 0;
+    
+    function updateText() {
+        // Fade out
+        rotatingElement.style.opacity = '0';
+        rotatingElement.style.transform = 'translateY(-10px)';
+        
+        setTimeout(() => {
+            // Change text
+            rotatingElement.textContent = titles[currentIndex];
+            currentIndex = (currentIndex + 1) % titles.length;
+            
+            // Fade in
+            rotatingElement.style.opacity = '1';
+            rotatingElement.style.transform = 'translateY(0)';
+        }, 400);
+    }
+    
+    // Initial text
+    rotatingElement.textContent = titles[0];
+    rotatingElement.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    
+    // Rotate every 3 seconds
+    setInterval(updateText, 3000);
+}
 
 /**
  * Load and render projects from projects.json
