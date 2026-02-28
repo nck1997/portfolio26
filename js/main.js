@@ -8,39 +8,72 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===========================
-// Rotating Text Animation
+// Typing Animation
 // ===========================
 
 function initRotatingText() {
     const rotatingElement = document.querySelector('.title-rotating');
     if (!rotatingElement) return;
     
-    const titles = ['UX Content ', 'AI Systems '];
-    let currentIndex = 0;
+    const phrases = ['UX Content', 'AI Systems'];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
     
-    function updateText() {
-        // Fade out
-        rotatingElement.style.opacity = '0';
-        rotatingElement.style.transform = 'translateY(-10px)';
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
         
-        setTimeout(() => {
-            // Change text
-            rotatingElement.textContent = titles[currentIndex];
-            currentIndex = (currentIndex + 1) % titles.length;
+        if (!isDeleting) {
+            // Typing
+            rotatingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
             
-            // Fade in
-            rotatingElement.style.opacity = '1';
-            rotatingElement.style.transform = 'translateY(0)';
-        }, 400);
+            if (charIndex === currentPhrase.length) {
+                // Finished typing
+                if (phraseIndex === 1) {
+                    // "AI Systems" - special final state
+                    rotatingElement.classList.add('hide-cursor', 'final-state');
+                    setTimeout(() => {
+                        // After 15 seconds, restore cursor and color, then delete
+                        rotatingElement.classList.remove('hide-cursor', 'final-state');
+                        setTimeout(() => {
+                            isDeleting = true;
+                            type();
+                        }, 500);
+                    }, 15000); // 15 seconds in final state
+                } else {
+                    // "UX Content" - normal hold
+                    setTimeout(() => {
+                        isDeleting = true;
+                        type();
+                    }, 5000);
+                }
+                return;
+            }
+            
+            setTimeout(type, 100); // Typing speed
+        } else {
+            // Deleting
+            rotatingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            
+            if (charIndex === 0) {
+                // Finished deleting, move to next phrase
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(type, 500); // Pause before typing next phrase
+                return;
+            }
+            
+            setTimeout(type, 50); // Deleting speed (faster)
+        }
     }
     
-    // Initial text
-    rotatingElement.textContent = titles[0];
-    rotatingElement.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-    
-    // Rotate every 5 seconds
-    setInterval(updateText, 5000);
+    // Start typing after brief delay
+    setTimeout(type, 1000);
 }
+
+// Blinking cursor handled by CSS
 
 /**
  * Load and render projects from projects.json

@@ -177,22 +177,46 @@ section {
     font-weight: 600;
     margin-bottom: var(--spacing-md);
     color: var(--color-secondary);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    min-height: 3.5rem;
+    white-space: nowrap;
 }
 
 .title-rotating {
     display: inline-block;
     color: var(--color-accent);
-    min-width: 150px;
-    text-align: left;
+    vertical-align: baseline;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.title-rotating::after {
+    content: '|';
+    color: var(--color-accent);
+    animation: blink 1.5s step-end infinite;
+    margin-left: 2px;
+}
+
+.title-rotating.hide-cursor::after {
+    display: none;
+}
+
+.title-rotating.final-state {
+    color: var(--color-primary);
+}
+
+@keyframes blink {
+    0%, 60% {
+        opacity: 1;
+    }
+    61%, 100% {
+        opacity: 0;
+    }
 }
 
 .title-static {
     display: inline-block;
     color: var(--color-primary);
+    vertical-align: baseline;
+    margin-left: 0.2rem;
 }
 
 .hero-subtitle {
@@ -330,6 +354,13 @@ section {
 .skill-list li {
     padding: 0.5rem 0;
     color: var(--color-secondary);
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: default;
+}
+
+.skill-list li:hover {
+    transform: translateY(-2px);
+    color: var(--color-primary);
 }
 
 /* ===========================
