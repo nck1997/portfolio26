@@ -38,8 +38,8 @@ function initRotatingText() {
     rotatingElement.textContent = titles[0];
     rotatingElement.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     
-    // Rotate every 7 seconds
-    setInterval(updateText, 7000);
+    // Rotate every 5 seconds
+    setInterval(updateText, 5000);
 }
 
 /**

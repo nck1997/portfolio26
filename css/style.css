@@ -445,8 +445,8 @@ section {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
 }
 
 .testimonial {
@@ -593,6 +593,10 @@ section {
         align-items: center;
     }
 
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     section {
         padding: var(--spacing-lg) 0;
     }
@@ -605,5 +609,9 @@ section {
 
     .nav-links {
         display: none; /* Simple mobile nav - can enhance later */
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
     }
 }

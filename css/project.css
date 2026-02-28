@@ -21,7 +21,7 @@
 }
 
 .project-header {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-md);
     border-bottom: 2px solid var(--color-border);
 }
@@ -54,19 +54,20 @@
 }
 
 .project-section {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .project-section h2 {
     font-size: 2rem;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    margin-top: 0;
     color: var(--color-primary);
 }
 
 .project-section h3 {
     font-size: 1.5rem;
-    margin-top: var(--spacing-sm);
-    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
     color: var(--color-primary);
 }
 
@@ -74,19 +75,20 @@
     font-size: 1.125rem;
     line-height: 1.7;
     color: var(--color-secondary);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0.75rem;
 }
 
 .project-section ul {
     margin-left: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .project-section li {
     font-size: 1.125rem;
     line-height: 1.7;
     color: var(--color-secondary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
 }
 
 .highlight {
@@ -95,10 +97,11 @@
     border-left: 4px solid var(--color-accent);
     font-weight: 500;
     color: var(--color-primary);
+    margin-bottom: 0.75rem;
 }
 
 .project-footer {
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
     padding-top: var(--spacing-md);
     border-top: 2px solid var(--color-border);
 }
@@ -112,7 +115,7 @@
 
 /* Image Layouts */
 .project-hero-image {
-    margin: var(--spacing-sm) 0 var(--spacing-md) 0;
+    margin: 0.5rem 0 1rem 0;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -128,21 +131,23 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
-    margin: var(--spacing-sm) 0 var(--spacing-md) 0;
+    margin: 0.5rem 0 1rem 0;
 }
 
 .image-grid-2 img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
 }
 
 .flow-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-sm);
-    margin: var(--spacing-sm) 0 var(--spacing-md) 0;
+    margin: 0.5rem 0 1rem 0;
 }
 
 .flow-gallery img {
