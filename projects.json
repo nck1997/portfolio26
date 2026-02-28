@@ -1,0 +1,61 @@
+{
+  "projects": [
+    {
+      "id": "ai-content-systems",
+      "title": "AI Content Systems at Intuit",
+      "tagline": "Designing AI-assisted content infrastructure to scale clarity, consistency, and access",
+      "client": "Intuit ProTax Group",
+      "deliverables": ["AI-powered content system", "Python automation scripts", "Internal GPTs", "Slack integrations"],
+      "summary": "Built an AI-assisted content system that structured ~4,000 help articles, enabling faster authoring, consistent reuse, and expanded access for support teams.",
+      "featured": true,
+      "tags": ["Content Strategy", "AI", "Content Design"],
+      "year": "2023-Present"
+    },
+    {
+      "id": "lacerte-forms-help",
+      "title": "Lacerte Forms Help",
+      "tagline": "Designing in-product, form-level guidance within a regulated tax environment",
+      "client": "Intuit ProTax Group",
+      "deliverables": ["In-product help system", "CSV/XML pipeline", "Content patterns", "Deep-linking framework"],
+      "summary": "Designed preventative content layer for thousands of tax forms, reducing errors and support dependency through contextual guidance at moment of need.",
+      "featured": true,
+      "tags": ["UX Content Design", "Trust & Safety", "In-Product Help"],
+      "year": "2023-Present"
+    },
+    {
+      "id": "cgi-meditation",
+      "title": "CGI Meditation Experiences",
+      "tagline": "VR meditation app for remote workers",
+      "client": "CGI Inc, Ideas2IP",
+      "deliverables": ["Business pitch deck", "Hi-Fi wireframes", "Product demo", "Research synthesis"],
+      "summary": "Conceptualized a virtual reality meditation app addressing remote work burnout. Won first place in company-wide VR innovation challenge.",
+      "featured": true,
+      "tags": ["UX Design", "VR", "Product Demo"],
+      "year": "2021-2023"
+    },
+    {
+      "id": "telecom-ux",
+      "title": "UX/UI Work for Telecom",
+      "tagline": "Enterprise B2B platform design",
+      "client": "US-based telecom corporation",
+      "deliverables": ["Hi-Fi wireframes", "Content audits", "Help documentation"],
+      "summary": "Collaborated with UX Product Designers to develop high-fidelity wireframes for enterprise B2B division products and services.",
+      "featured": false,
+      "tags": ["UX Design", "B2B", "Enterprise"],
+      "year": "2021-2023",
+      "passwordProtected": true
+    },
+    {
+      "id": "sales-support",
+      "title": "New Engagement Sales Support",
+      "tagline": "Marketing and proposal content",
+      "client": "CGI Inc, Sales Support",
+      "deliverables": ["Marketing content", "Proposal presentations", "Leave-behind documentation"],
+      "summary": "Created presentation decks with strong visual design and compelling narrative to showcase services and value to prospective clients.",
+      "featured": false,
+      "tags": ["Marketing", "Presentations", "Sales"],
+      "year": "2021-2023",
+      "passwordProtected": true
+    }
+  ]
+}
