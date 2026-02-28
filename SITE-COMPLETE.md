@@ -22,7 +22,7 @@ Your entire Squarespace site has been scraped and rebuilt as a custom HTML/CSS/J
    - Location info
    - Clean, simple layout
 
-### Project Pages
+### Project Pages (ALL 5!)
 1. **`projects/ai-content-systems.html`** ✨ NEW
    - Full Intuit project details
    - Technical implementation
@@ -39,18 +39,30 @@ Your entire Squarespace site has been scraped and rebuilt as a custom HTML/CSS/J
    - User journeys
    - Results (1st place win!)
 
+4. **`projects/telecom-ux.html`** ✅ ADDED
+   - Enterprise B2B platform work
+   - Confidential/NDA content
+   - Complete professional writeup
+
+5. **`projects/sales-support.html`** ✅ ADDED
+   - Marketing & proposal content
+   - Sales enablement work
+   - Full project details
+
 ---
 
 ## 📊 Project Database
 
 **`projects.json`** contains all 5 projects:
 
-### Featured Projects (show on homepage):
+### Featured Projects (ALL show on homepage!):
 1. ✨ **AI Content Systems at Intuit** - NEW
 2. ✨ **Lacerte Forms Help** - NEW  
 3. ✅ **CGI Meditation Experiences** - SCRAPED
-4. **UX/UI Work for Telecom** (password protected on old site)
-5. **New Engagement Sales Support** (password protected on old site)
+4. ✅ **UX/UI Work for Telecom** - ADDED (was password protected)
+5. ✅ **New Engagement Sales Support** - ADDED (was password protected)
+
+**ALL 5 PROJECTS NOW HAVE FULL PAGES!** 🎉
 
 ---
 
