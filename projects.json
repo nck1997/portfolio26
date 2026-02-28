@@ -25,12 +25,12 @@
     {
       "id": "cgi-meditation",
       "title": "CGI Meditation Experiences",
-      "tagline": "VR meditation app for remote workers",
+      "tagline": "VR meditation app designed to enhance remote worker well-being",
       "client": "CGI Inc, Ideas2IP",
-      "deliverables": ["Business pitch deck", "Hi-Fi wireframes", "Product demo", "Research synthesis"],
-      "summary": "Conceptualized a virtual reality meditation app addressing remote work burnout. Won first place in company-wide VR innovation challenge.",
+      "deliverables": ["Business pitch deck", "Hi-Fi wireframes", "Product demo", "Research synthesis", "Guided meditation recording"],
+      "summary": "Created concept, pitch, and demo for a VR meditation app that integrates with work calendars. Won first place in CGI's VR innovation challenge, beating all competing teams.",
       "featured": true,
-      "tags": ["UX Design", "VR", "Product Demo"],
+      "tags": ["Marketing", "UX Content Design", "User Research", "VR"],
       "year": "2021-2023"
     },
     {
