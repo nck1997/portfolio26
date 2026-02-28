@@ -15,7 +15,7 @@ function initRotatingText() {
     const rotatingElement = document.querySelector('.title-rotating');
     if (!rotatingElement) return;
     
-    const titles = ['UX Content ', 'AI Systems ', 'Your next '];
+    const titles = ['UX Content ', 'Content Systems ', 'AI Systems ', 'Your next '];
     let currentIndex = 0;
     
     function updateText() {
@@ -38,8 +38,8 @@ function initRotatingText() {
     rotatingElement.textContent = titles[0];
     rotatingElement.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     
-    // Rotate every 3 seconds
-    setInterval(updateText, 3000);
+    // Rotate every 4.5 seconds (longer hold time)
+    setInterval(updateText, 4500);
 }
 
 /**
@@ -89,16 +89,23 @@ function createProjectCard(project) {
         ? '<span class="project-tag" style="background: #fee; border-color: #fcc; color: #c33;">🔒 Password Protected</span>' 
         : '';
     
+    const projectImage = project.image 
+        ? `<div class="project-card-image"><img src="${project.image}" alt="${project.title}" /></div>`
+        : '';
+    
     return `
         <div class="project-card" data-project-id="${project.id}">
-            <h3>${project.title}</h3>
-            <p class="project-tagline">${project.tagline}</p>
-            <div class="project-tags">
-                ${tags}
-                ${passwordBadge}
+            ${projectImage}
+            <div class="project-card-content">
+                <h3>${project.title}</h3>
+                <p class="project-tagline">${project.tagline}</p>
+                <div class="project-tags">
+                    ${tags}
+                    ${passwordBadge}
+                </div>
+                <p class="project-summary">${project.summary}</p>
+                <a href="projects/${project.id}.html" class="project-link">View Project</a>
             </div>
-            <p class="project-summary">${project.summary}</p>
-            <a href="projects/${project.id}.html" class="project-link">View Project</a>
         </div>
     `;
 }
