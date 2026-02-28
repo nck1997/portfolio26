@@ -36,26 +36,26 @@
     {
       "id": "telecom-ux",
       "title": "UX/UI Work for Telecom",
-      "tagline": "Enterprise B2B platform design",
-      "client": "US-based telecom corporation",
-      "deliverables": ["Hi-Fi wireframes", "Content audits", "Help documentation"],
-      "summary": "Collaborated with UX Product Designers to develop high-fidelity wireframes for enterprise B2B division products and services.",
-      "featured": false,
-      "tags": ["UX Design", "B2B", "Enterprise"],
+      "tagline": "Enterprise B2B platform design for multi-location service management",
+      "client": "US-based telecom corporation (via CGI Inc.)",
+      "deliverables": ["Hi-Fi wireframes", "Content audits", "Internal/customer-facing communication", "Help documentation"],
+      "summary": "Designed UX content for complex B2B platforms supporting enterprise customers with multi-location telecommunications service needs. Confidential work subject to NDA.",
+      "featured": true,
+      "tags": ["UX Writing", "B2B", "Enterprise", "Confidential"],
       "year": "2021-2023",
-      "passwordProtected": true
+      "confidential": true
     },
     {
       "id": "sales-support",
       "title": "New Engagement Sales Support",
-      "tagline": "Marketing and proposal content",
-      "client": "CGI Inc, Sales Support",
+      "tagline": "Strategic marketing content and proposals to win enterprise clients",
+      "client": "CGI Inc, Sales Support Team",
       "deliverables": ["Marketing content", "Proposal presentations", "Leave-behind documentation"],
-      "summary": "Created presentation decks with strong visual design and compelling narrative to showcase services and value to prospective clients.",
-      "featured": false,
-      "tags": ["Marketing", "Presentations", "Sales"],
+      "summary": "Designed strategic marketing content and pitch decks for CGI's business development efforts. Created compelling narratives that showcased services and value to prospective enterprise clients.",
+      "featured": true,
+      "tags": ["Marketing", "Sales Enablement", "Presentations"],
       "year": "2021-2023",
-      "passwordProtected": true
+      "confidential": true
     }
   ]
 }
