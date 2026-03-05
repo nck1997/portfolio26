@@ -270,7 +270,7 @@ section {
    Experience Section
    =========================== */
 
-.experience {
+.about {
     background: var(--color-bg);
 }
 
@@ -280,55 +280,84 @@ section {
     text-align: center;
 }
 
-.experience-grid {
-    display: grid;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
+.section-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-.experience-item {
-    padding: var(--spacing-md);
-    border-left: 3px solid var(--color-accent);
-    background: var(--color-bg-alt);
-    border-radius: 4px;
+/* About Section - Timeline */
+.about-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
 }
 
-.experience-item h3 {
-    font-size: 1.5rem;
+.about-intro p {
+    color: var(--color-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.experience-timeline {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.timeline-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-item .timeline-role {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.timeline-item h3 {
+    margin: 0;
+    font-size: 1.1rem;
     color: var(--color-primary);
 }
 
-.experience-item .company {
-    font-size: 1.125rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.experience-item .years {
+.timeline-item .company {
+    color: var(--color-secondary);
     font-size: 0.95rem;
+    margin: 0;
+}
+
+.timeline-item .timeline-dates {
     color: var(--color-secondary);
-    font-style: italic;
-    margin-bottom: var(--spacing-sm);
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0.5rem;
+    opacity: 0.7;
 }
 
-.experience-item ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.experience-item li {
-    padding-left: 1.5rem;
-    position: relative;
-    margin-bottom: 0.75rem;
+.timeline-item .timeline-summary {
     color: var(--color-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.experience-item li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
+.about-cta {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-cta p {
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+}
+
+.about-cta a {
     color: var(--color-accent);
+    text-decoration: underline;
 }
 
 /* Skills & Tools */

@@ -13,6 +13,18 @@
       "image": "images/DesignMac.webp"
     },
     {
+      "id": "tax-season-automation",
+      "title": "Tax Season Content Automation",
+      "tagline": "Replacing a daily 30-60 minute manual workflow with a single Python command",
+      "client": "Intuit ProTax Group",
+      "deliverables": ["Python automation script", "CSV processing pipeline", "Smartsheet integration", "WordPress publishing automation"],
+      "summary": "Identified and automated a complex, error-prone daily workflow during tax season that involved CSV exports, Smartsheet updates, and WordPress publishing. Reduced a 10-step manual process to a single 5-second command, eliminating systematic errors including duplicate rows and formatting issues.",
+      "featured": true,
+      "tags": ["Automation", "Python", "Content Operations", "Process Design"],
+      "year": "2024-2025",
+      "image": "images/Wireframe notes.webp"
+    },
+    {
       "id": "lacerte-forms-help",
       "title": "Professional Tax Product Form Help",
       "tagline": "Designing in-product, form-level guidance within a regulated tax environment",
@@ -42,7 +54,7 @@
       "tagline": "Enterprise B2B platform design for multi-location service management",
       "client": "US-based telecom corporation (via CGI Inc.)",
       "deliverables": ["Hi-Fi wireframes", "Content audits", "Internal/customer-facing communication", "Help documentation"],
-      "summary": "Designed UX content for complex B2B platforms supporting enterprise customers with multi-location telecommunications service needs. Confidential work subject to NDA.",
+      "summary": "Designed UX content for complex B2B platforms supporting enterprise customers managing connectivity, voice, and network services across hundreds of locations. Translated dense technical and contractual requirements into clear decision-enabling UI language. Work completed under NDA—case study available upon request.",
       "featured": true,
       "tags": ["UX Writing", "B2B", "Enterprise", "Confidential"],
       "year": "2021-2023",
@@ -55,7 +67,7 @@
       "tagline": "Strategic marketing content and proposals to win enterprise clients",
       "client": "CGI Inc, Sales Support Team",
       "deliverables": ["Marketing content", "Proposal presentations", "Leave-behind documentation"],
-      "summary": "Designed strategic marketing content and pitch decks for CGI's business development efforts. Created compelling narratives that showcased services and value to prospective enterprise clients.",
+      "summary": "Created strategic pitch decks and proposal narratives for CGI's enterprise business development team. Collaborated with sales support and leadership to tailor messaging to specific prospective clients while adhering to brand guidelines. Work completed under NDA—samples available upon request.",
       "featured": true,
       "tags": ["Marketing", "Sales Enablement", "Presentations"],
       "year": "2021-2023",

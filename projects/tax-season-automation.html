@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tax Season Content Automation - Replacing a daily 30-60 minute manual workflow with a single Python command">
+    <title>Tax Season Content Automation - Nischal Kelwadkar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Nav -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">NISCHAL KELWADKAR</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <article class="project-page">
+        <div class="container">
+            <a href="../index.html#work" class="back-link">← Back to Work</a>
+            
+            <header class="project-header">
+                <h1>Tax Season Content Automation</h1>
+                <p class="project-subtitle">Replacing a daily 30-60 minute manual workflow with a single Python command</p>
+                <div class="project-meta">
+                    <span class="meta-item"><strong>Client:</strong> Intuit ProTax Group</span>
+                    <span class="meta-item"><strong>Year:</strong> 2024-2025</span>
+                </div>
+            </header>
+
+            <section class="project-section">
+                <h2>Overview</h2>
+                <div class="project-hero-image">
+                    <img src="../images/Wireframe notes.webp" alt="Automation workflow diagram" />
+                </div>
+                <p>During tax season, the Intuit ProTax content team needed to publish daily updates to Agency Approval help articles across multiple professional tax products. The existing process was entirely manual: export CSVs from an internal source, cross-reference and update rows in a Smartsheet, manually format content, copy it into WordPress, and publish. The full workflow took 30-60 minutes per day, was repeated every business day during the season, and was prone to systematic errors—duplicate rows, formatting inconsistencies, and missed updates.</p>
+            </section>
+
+            <section class="project-section">
+                <h2>The Problem</h2>
+                <p>The workflow involved 10 discrete manual steps across 4 different tools (internal data source, Excel/CSV, Smartsheet, WordPress). Each handoff introduced risk: duplicate rows from copy-paste errors, inconsistent formatting between articles, and no validation layer to catch mistakes before publishing.</p>
+                <p class="highlight">These articles are compliance-critical—professional accountants rely on them to know which tax forms have been approved by agencies, so errors directly impact trust and could lead to filing mistakes.</p>
+            </section>
+
+            <section class="project-section">
+                <h2>The Solution</h2>
+                <p>Built a Python automation script that consolidates the entire pipeline into a single command. The script:</p>
+                <ul>
+                    <li>Pulls the source data</li>
+                    <li>Processes and deduplicates CSV rows</li>
+                    <li>Generates properly formatted article-ready HTML</li>
+                    <li>Integrates with the Smartsheet API for status tracking</li>
+                    <li>Prepares content for WordPress publishing</li>
+                </ul>
+                <p>What previously took 30-60 minutes of focused manual work now executes in approximately 5 seconds.</p>
+            </section>
+
+            <section class="project-section">
+                <h2>Impact</h2>
+                <ul>
+                    <li>Reduced daily workflow from 30-60 minutes to ~5 seconds</li>
+                    <li>Eliminated systematic errors (duplicate rows, formatting inconsistencies)</li>
+                    <li>Ensured 100% accuracy in compliance-critical content</li>
+                    <li>Freed up team capacity for higher-value content design work during the busiest season</li>
+                    <li>Process was documented and handed off so any team member could run it</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2>What This Demonstrates</h2>
+                <p>This project sits at the intersection of content design and systems thinking. It wasn't a traditional UX deliverable—there's no mockup or wireframe. But it reflects the same core skill: seeing a broken process, understanding the user need (accurate, timely content), and designing a solution that scales.</p>
+                <p>It also reflects a growing part of my practice: using technical skills (Python, data processing, API integrations) to solve content problems that pure writing can't fix.</p>
+            </section>
+
+            <footer class="project-footer">
+                <a href="../index.html#work" class="back-link-bottom">← Back to Work</a>
+            </footer>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nischal Kelwadkar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
