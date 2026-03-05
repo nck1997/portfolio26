@@ -270,7 +270,12 @@ section {
    Experience Section
    =========================== */
 
-.about {
+.about-intro-section {
+    background: var(--color-bg-alt);
+    padding-bottom: var(--spacing-lg);
+}
+
+.experience-section {
     background: var(--color-bg);
 }
 
@@ -381,15 +386,47 @@ section {
 }
 
 .skill-list li {
-    padding: 0.5rem 0;
-    color: var(--color-secondary);
-    transition: transform 0.2s ease, color 0.2s ease;
-    cursor: default;
+    padding: 0;
+    transition: none;
+    cursor: pointer;
 }
 
 .skill-list li:hover {
-    transform: translateY(-2px);
-    color: var(--color-primary);
+    transform: none;
+    color: inherit;
+}
+
+/* Skill/Tool Interactive Links */
+.skill-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.skill-link:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+.skill-link::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease, right 0.2s ease;
+    color: var(--color-accent);
+    font-size: 0.85rem;
+}
+
+.skill-link:hover::after {
+    opacity: 1;
+    right: -1rem;
 }
 
 /* ===========================
@@ -505,7 +542,7 @@ section {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
 }
 
@@ -654,7 +691,7 @@ section {
     }
 
     .testimonials-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     section {
