@@ -102,17 +102,24 @@
             color: var(--color-primary);
         }
         
-        /* Deep link hover styles */
+        /* Deep link hover styles - match Skills/Tools section */
         .project-link {
             color: var(--color-secondary);
             text-decoration: none;
-            border-bottom: 1px dotted transparent;
-            transition: all 0.2s ease;
+            font-weight: 600;
+            transition: color 0.2s ease, transform 0.1s ease;
+            display: inline-block;
+        }
+        
+        /* Remove arrow from resume page links */
+        .project-link::after {
+            content: none !important;
         }
         
         .project-link:hover {
-            color: var(--color-accent);
-            border-bottom-color: var(--color-accent);
+            color: var(--color-primary);
+            transform: translateX(4px);
+            opacity: 1;
         }
         
         .resume-actions {
