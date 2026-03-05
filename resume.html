@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume - Nischal Kelwadkar, UX Content Designer">
+    <title>Resume - Nischal Kelwadkar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .resume-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-md);
+            background: var(--color-bg);
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--color-border);
+        }
+        
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-contact {
+            color: var(--color-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .resume-contact a {
+            color: var(--color-accent);
+        }
+        
+        .resume-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .resume-section h2 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .job-dates {
+            font-style: italic;
+            color: var(--color-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .resume-section ul {
+            margin: 0.75rem 0 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .resume-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: var(--color-secondary);
+        }
+        
+        .subsection {
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .skills-list, .tools-list {
+            color: var(--color-secondary);
+            line-height: 1.8;
+        }
+        
+        .education {
+            line-height: 1.8;
+            color: var(--color-secondary);
+        }
+        
+        .education-name {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        
+        /* Deep link hover styles */
+        .project-link {
+            color: var(--color-secondary);
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .project-link:hover {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+        
+        .resume-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        
+        @media print {
+            .header, .footer, .resume-actions, .back-link {
+                display: none;
+            }
+            .resume-page {
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Nav -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">NISCHAL KELWADKAR</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="resume-page">
+        <a href="index.html#about" class="back-link">← Back to Portfolio</a>
+        
+        <div class="resume-actions">
+            <a href="Nischal_Resume_2026.pdf" download class="cta-button secondary">Download PDF</a>
+            <a href="index.html#work" class="cta-button secondary">View Case Studies</a>
+        </div>
+
+        <div class="resume-header">
+            <h1>NISCHAL KELWADKAR</h1>
+            <div class="resume-contact">
+                Dallas–Fort Worth, TX · nischalnck@gmail.com · (469) 500-2191 · 
+                <a href="https://www.linkedin.com/in/nischal-kelwadkar-384573167/" target="_blank" rel="noopener">LinkedIn</a> · 
+                <a href="https://www.nischalkelwadkar.com">Portfolio</a>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Experience</h2>
+
+            <div class="job-header">
+                <span class="job-title">UX Content Designer II – Intuit</span>
+                <span class="job-dates">October 2023 – Present</span>
+            </div>
+            <ul>
+                <li>Lead <a href="projects/lacerte-forms-help.html#content-design-strategy" class="project-link">content design</a> for high-stakes, compliance-critical professional tax products within Intuit's ProTax Group, designing member-facing experiences across sensitive product surfaces that uphold trust, accuracy, and regulatory integrity for professional accountants nationwide.</li>
+                <li>Own end-to-end <a href="projects/ai-content-systems.html#content-capture" class="project-link">content strategy</a> for <a href="projects/lacerte-forms-help.html#writing-in-product" class="project-link">in-product help systems</a>—identifying high-risk inputs and delivering <a href="projects/lacerte-forms-help.html#trust-safety" class="project-link">contextual guidance</a> that enables members to self-solve without contacting support, directly reducing call handle time and repeat requests.</li>
+                <li>Partner closely with legal, compliance, privacy, tax development, and engineering teams to ensure all member-facing content meets evolving regulatory requirements, balancing company obligations with member trust and comprehension.</li>
+                <li>Establish scalable <a href="projects/lacerte-forms-help.html#technical-implementation" class="project-link">information architecture</a>, <a href="projects/lacerte-forms-help.html#terminology" class="project-link">voice & tone guidelines</a>, terminology systems, and <a href="projects/lacerte-forms-help.html#deep-linking" class="project-link">deep-linking frameworks</a> that surface precise, trustworthy answers at the moment of member need across multiple products.</li>
+                <li>Define and lead multiple concurrent content initiatives simultaneously, partnering closely with <a href="projects/cgi-meditation.html#wireframes" class="project-link">product designers</a> and engineering to communicate effectively across member-facing interfaces and internal tooling.</li>
+                <li>Present content strategy, design rationale, and recommendations to <a href="projects/lacerte-forms-help.html#cross-functional" class="project-link">cross-functional stakeholders</a> and leadership, advocating for language approaches that balance compliance obligations with clear, supportive member experiences.</li>
+            </ul>
+
+            <div class="subsection">Selected Impact & Initiatives</div>
+            <ul>
+                <li>Built an <a href="projects/ai-content-systems.html#ai-authoring" class="project-link">AI-powered content system</a> by programmatically structuring ~4,000 help articles across the product suite, preserving metadata and URLs to enable faster authoring, consolidation, and QA—presented to leadership as a scalable content infrastructure model.</li>
+                <li><a href="projects/tax-season-automation.html#python-solution" class="project-link">Automated the daily update workflow</a> for compliance-critical help articles across two products, replacing a multi-step manual process with <a href="projects/tax-season-automation.html#python-solution" class="project-link">Python scripts</a> that generate article-ready HTML—reducing update time from 60+ minutes to under 5 seconds while eliminating systematic accuracy errors.</li>
+                <li>Consulted on in-game content for Prosperity Quest, Intuit's nationally recognized Web3D financial literacy game—playtesting the demo build and delivering <a href="projects/lacerte-forms-help.html#content-design-strategy" class="project-link">UX content recommendations</a> to improve clarity, instructional flow, and player experience.</li>
+                <li>Designed scalable language frameworks and content patterns reused across multiple product lines, enabling consistent terminology and voice across the product ecosystem.</li>
+                <li>Extended content systems to support Canadian tax products and bilingual (EN/FR) content across multiple surfaces, enabling regional parity and mentoring team members on setup and maintenance.</li>
+                <li>Created product-specific internal GPTs to support content reuse at scale; partnered with the TurboTax consumer organization to build a parallel <a href="projects/ai-content-systems.html#ai-authoring" class="project-link">AI-assisted content system</a> supporting article development and video script writing.</li>
+            </ul>
+
+            <div class="job-header">
+                <span class="job-title">UX Content Designer – CGI Inc.</span>
+                <span class="job-dates">June 2021 – June 2023</span>
+            </div>
+            <ul>
+                <li>Designed <a href="projects/lacerte-forms-help.html#content-design-strategy" class="project-link">UX content</a> for complex, high-stakes B2B platforms for AT&T Business—translating dense technical, legal, and contractual requirements into clear, actionable UI language that helped enterprise users make confident decisions across sensitive product flows.</li>
+                <li>Partnered with <a href="projects/cgi-meditation.html#wireframes" class="project-link">product designers</a>, engineers, and client stakeholders to define <a href="projects/ai-content-systems.html#content-capture" class="project-link">information architecture</a>, scalable content patterns, and <a href="projects/lacerte-forms-help.html#terminology" class="project-link">voice & tone frameworks</a> for business-facing products serving enterprise customers with multi-location service needs.</li>
+                <li>Mapped and improved user journeys and content flows across multiple surfaces through journey maps, personas, <a href="projects/cgi-meditation.html#wireframes" class="project-link">wireframes</a>, and prototypes—surfacing risk points, edge cases, and moments of potential user confusion.</li>
+                <li>Presented content strategy and design rationale to <a href="projects/lacerte-forms-help.html#cross-functional" class="project-link">cross-functional stakeholders</a> and clients, embedding deeply within the design organization to move work forward through the lens of content.</li>
+            </ul>
+
+            <div class="job-header">
+                <span class="job-title">Project Manager – Eisenberg Inc.</span>
+                <span class="job-dates">March 2021 – June 2021</span>
+            </div>
+            <ul>
+                <li>Managed multiple concurrent projects from planning through execution, coordinating timelines, deliverables, and <a href="projects/lacerte-forms-help.html#cross-functional" class="project-link">cross-functional communication</a> across clients, designers, and vendors.</li>
+            </ul>
+
+            <div class="job-header">
+                <span class="job-title">Web Content Writer – University of North Texas</span>
+                <span class="job-dates">September 2019 – June 2020</span>
+            </div>
+            <ul>
+                <li>Produced editorial content for the UNT Technical Communication website through faculty, student, and industry interviews; collaborated with writers and designers to plan, draft, and publish content aligned with editorial and accessibility standards.</li>
+            </ul>
+        </div>
+
+        <div class="resume-section">
+            <h2>Skills</h2>
+            <p class="skills-list">
+                <a href="projects/lacerte-forms-help.html#content-design-strategy" class="project-link">Content Design</a> · 
+                <a href="projects/lacerte-forms-help.html#writing-in-product" class="project-link">UX Writing</a> · 
+                <a href="projects/ai-content-systems.html#content-capture" class="project-link">Content Strategy</a> · 
+                <a href="projects/lacerte-forms-help.html#technical-implementation" class="project-link">Information Architecture</a> · 
+                <a href="projects/lacerte-forms-help.html#trust-safety" class="project-link">Trust & Safety UX</a> · 
+                <a href="projects/lacerte-forms-help.html#writing-in-product" class="project-link">In-product Help Systems</a> · 
+                <a href="projects/lacerte-forms-help.html#terminology" class="project-link">Voice & Tone</a> · 
+                <a href="projects/lacerte-forms-help.html#terminology" class="project-link">Terminology Systems</a> · 
+                Scalable Language Frameworks · 
+                <a href="projects/ai-content-systems.html#ai-authoring" class="project-link">AI-assisted Content Workflows</a> · 
+                End-to-End Feature Development · 
+                <a href="projects/lacerte-forms-help.html#cross-functional" class="project-link">Cross-functional Collaboration</a> · 
+                Stakeholder Presentations · 
+                Legal, Privacy & Compliance Partnership
+            </p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Tools</h2>
+            <p class="tools-list">
+                <a href="projects/cgi-meditation.html#wireframes" class="project-link">Figma</a> · 
+                <a href="projects/tax-season-automation.html#python-solution" class="project-link">Python (scripting & automation)</a> · 
+                <a href="projects/tax-season-automation.html#impact" class="project-link">GitHub</a> · 
+                <a href="projects/cgi-meditation.html#selling-product" class="project-link">Adobe Creative Suite</a> · 
+                <a href="projects/lacerte-forms-help.html#technical-implementation" class="project-link">CSV/XML</a> · 
+                <a href="projects/tax-season-automation.html#wordpress-publishing" class="project-link">WordPress (Gutenberg)</a> · 
+                <a href="projects/lacerte-forms-help.html#identifying-high-risk" class="project-link">JIRA</a> · 
+                Confluence · 
+                <a href="projects/lacerte-forms-help.html#deep-linking" class="project-link">Google Analytics</a> · 
+                Slack
+            </p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Education</h2>
+            <div class="education">
+                <span class="education-name">University of North Texas</span><br/>
+                B.S. in Professional & Technical Communication · Minor: English (Creative Writing Focus)
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nischal Kelwadkar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
