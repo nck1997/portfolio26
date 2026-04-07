@@ -45,7 +45,7 @@
                 <h2>Overview</h2>
                 <!-- IMAGE: Tool running in browser — single search mode showing utterance input, DA response with confidence badge, citation blocks -->
                 <p>The TurboTax Digital Assistant authoring pipeline had a hard deadline built into it: a team of domain experts who had been lending 3 days a week to hand-author DA responses was offboarding on April 16th. After that date, there was no plan. The pipeline that had taken 2 business days to produce 100 utterance responses — across 7 experts and 2–4 lead reviewers — would simply stop.</p>
-                <p>Triple A is the system I designed and built to resolve that dependency before the deadline hit. It takes real customer utterances, searches 3,684 articles across the TTLC, Tax Tips, and IRS catalogs, and generates style-guide-compliant DA responses with confidence scoring, source citations, and gap analysis. What took the expert team 2 days now takes the tool under 5 minutes — and at 76.6% HIGH + MEDIUM confidence, only the remaining LOW-confidence outputs need the kind of expert review the team was previously providing for everything.</p>
+                <p>Authoring Accelerator Agent is the system I designed and built to resolve that dependency before the deadline hit. It takes real customer utterances, searches 3,684 articles across the TTLC, Tax Tips, and IRS catalogs, and generates style-guide-compliant DA responses with confidence scoring, source citations, and gap analysis. What took the expert team 2 days now takes the tool under 5 minutes — and at 76.6% HIGH + MEDIUM confidence, only the remaining LOW-confidence outputs need the kind of expert review the team was previously providing for everything.</p>
                 <p class="highlight">This isn't a customer-facing product. It's infrastructure — built so the DA content team could continue operating independently after a critical external resource disappeared.</p>
             </section>
 
@@ -60,7 +60,7 @@
             <section class="project-section">
                 <h2 id="architecture">How It Works</h2>
                 <!-- IMAGE: Architecture diagram or annotated tool UI showing the three pipeline stages -->
-                <p>Triple A has three layers. The first is a Python pre-filter that runs instantly — it classifies the utterance's intent (tax question, product support, navigation, refund status), extracts IRS form identifiers (1099-R, 1098-T, Schedule E), routes to 1–2 relevant topic buckets, and scores every article in those buckets using an IDF-weighted system. The top 10 candidates pass to the next layer.</p>
+                <p>Authoring Accelerator Agent has three layers. The first is a Python pre-filter that runs instantly — it classifies the utterance's intent (tax question, product support, navigation, refund status), extracts IRS form identifiers (1099-R, 1098-T, Schedule E), routes to 1–2 relevant topic buckets, and scores every article in those buckets using an IDF-weighted system. The top 10 candidates pass to the next layer.</p>
                 <p>The second layer is Claude Code CLI, called as a subprocess. It receives a system prompt I wrote — roughly 3,000 words of content design rules, citation format specs, and DA response guidance drawn from the Intuit Conversational Design Style Guide — plus the pre-filtered articles, plus the customer utterance. It returns a structured response: a search log, a suggested DA response, citation blocks with article excerpts and URLs, a confidence level (HIGH / MEDIUM / LOW), and a gap summary.</p>
                 <p>The third layer is the browser frontend — a single-file HTML/CSS/JS app that renders the response, color-codes confidence (green for HIGH, yellow for MEDIUM/LOW), auto-injects the best source link into the DA response, and handles batch mode with a progress bar and session history. The frontend also does meaningful post-processing: it moves the DA response block to a consistent position regardless of where Claude places it in the output, and infers confidence from response content when Claude's label is missing. Both were necessary because prompt instructions alone weren't reliable enough.</p>
 
@@ -71,7 +71,7 @@
 
             <section class="project-section">
                 <h2 id="system-prompt">The System Prompt Is the Design</h2>
-                <p>On a conventional product, the UX is in the interface. On Triple A, the most consequential design work happened in the system prompt — a 3,000-word document that defines what the tool is, how it reasons, and what it produces.</p>
+                <p>On a conventional product, the UX is in the interface. On Authoring Accelerator Agent, the most consequential design work happened in the system prompt — a 3,000-word document that defines what the tool is, how it reasons, and what it produces.</p>
                 <p>The prompt specifies: the tool's role (content catalog search engine, not tax advisor), the three sources and how to prioritize them, the exact citation format including table structure and required fields, the confidence tier definitions, URL validation rules (CATALOG vs. IRS REFERENCE vs. ⚠️ WEB RESULT), and the DA response rules — plainspoken, neutral, 2–4 sentences, guide role, always end with the best resource link.</p>
                 <p>Those DA response rules are drawn directly from the Intuit Conversational Design Style Guide. The prompt doesn't just instruct Claude to "write a response" — it encodes years of UX content guidance into the generation context, making the style guide machine-executable.</p>
                 <p class="highlight">Getting the prompt right was an iterative process. Several instructions that seemed clear in writing got ignored in practice — Claude wouldn't reliably include a link in every DA response, and it would place the DA response in inconsistent positions. Rather than infinitely iterating on the prompt, I moved those responsibilities to the frontend. The prompt handles what LLMs do well; the code handles what they don't.</p>
@@ -89,7 +89,7 @@
             <section class="project-section">
                 <h2 id="golden-dataset">Golden Dataset: Measuring Quality at Scale</h2>
                 <!-- IMAGE: Summary table from batch mode showing utterances, confidence badges, DA responses, gap notes -->
-                <p>Triple A includes a <code>/golden</code> skill for Claude Code — a slash command that processes 100 to 1,000+ utterances in parallel using batched subagents. I used it to build and evaluate a 768-utterance golden dataset, running the full corpus through the tool and tracking confidence outcomes across versions.</p>
+                <p>Authoring Accelerator Agent includes a <code>/golden</code> skill for Claude Code — a slash command that processes 100 to 1,000+ utterances in parallel using batched subagents. I used it to build and evaluate a 768-utterance golden dataset, running the full corpus through the tool and tracking confidence outcomes across versions.</p>
 
                 <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0;">
                     <thead>
@@ -124,7 +124,7 @@
 
             <section class="project-section">
                 <h2 id="impact">Impact</h2>
-                <p>The before-and-after is stark: 100 utterances took the expert team 2 business days. Triple A processes 100 in under 5 minutes.</p>
+                <p>The before-and-after is stark: 100 utterances took the expert team 2 business days. Authoring Accelerator Agent processes 100 in under 5 minutes.</p>
                 <p>But the more meaningful shift is what happens to the review burden. With 76.6% of outputs landing at HIGH or MEDIUM confidence, the expert-level judgment that was previously required for every single utterance is now only required for roughly 1 in 4. The HIGH and MEDIUM outputs come back with citations, sourced excerpts, and style-guide-aligned responses ready for a light review pass. Only the LOW-confidence outputs — the ones where the corpus genuinely doesn't have a good answer — need the kind of full authoring the team was doing for everything before.</p>
                 <p>That triage model is what makes the tool sustainable past April 16th. The team doesn't need the domain experts to handle everything anymore. They need them — or their own content judgment — for the cases that actually require it.</p>
                 <ul>
@@ -140,7 +140,7 @@
 
             <section class="project-section">
                 <h2 id="what-this-demonstrates">What This Demonstrates</h2>
-                <p>Triple A sits at an intersection that's increasingly where content design lives: the system prompt is a content deliverable, the scoring logic encodes editorial judgment, and the tool architecture is a UX decision with downstream consequences for every team member who uses it.</p>
+                <p>Authoring Accelerator Agent sits at an intersection that's increasingly where content design lives: the system prompt is a content deliverable, the scoring logic encodes editorial judgment, and the tool architecture is a UX decision with downstream consequences for every team member who uses it.</p>
                 <p>But the more fundamental thing this project demonstrates is how I approach a problem with a hard deadline. The expert team's availability wasn't going to extend. The API access barriers weren't going to clear on a useful timeline. The Gemini tooling wasn't going to become reliable through more prompt iteration. Each of those was a real constraint, not a temporary obstacle — and the right response to each was to route around it, not wait it out.</p>
                 <p>The tool shipped before April 16th. The documentation is thorough enough for any teammate to run it independently. The golden dataset is a versioned quality artifact the team can re-run as the corpus evolves. The pipeline that was going to stop now has a path forward.</p>
                 <p class="highlight">I saw the cliff. I built the bridge. That's the project.</p>

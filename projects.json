@@ -6,7 +6,7 @@
       "tagline": "Building an AI authoring pipeline to preserve DA content quality after a critical expert dependency ends",
       "client": "Intuit ProTax Group (TurboTax)",
       "deliverables": ["Local search tool (Python + HTML)", "System prompt engineering", "IDF-weighted scoring system", "768-utterance golden dataset", "Claude Code CLI integration"],
-      "summary": "The DA authoring pipeline relied on borrowed domain experts offboarding April 16th — 7 specialists lending 3 days/week to a process that took 2 business days per 100 utterances. I built Triple A to resolve that dependency before the deadline. It searches 3,684 articles, generates style-guide-compliant DA responses with confidence scoring and gap analysis, and processes 100 utterances in under 5 minutes. At 76.6% HIGH + MEDIUM confidence, only the LOW-tier outputs need full expert review.",
+      "summary": "The DA authoring pipeline relied on borrowed domain experts offboarding April 16th — 7 specialists lending 3 days/week to a process that took 2 business days per 100 utterances. I built Authoring Accelerator Agent to resolve that dependency before the deadline. It searches 3,684 articles, generates style-guide-compliant DA responses with confidence scoring and gap analysis, and processes 100 utterances in under 5 minutes. At 76.6% HIGH + MEDIUM confidence, only the LOW-tier outputs need full expert review.",
       "featured": true,
       "tags": ["AI Systems Design", "Content Operations", "Python", "Automation"],
       "year": "2025–2026",
