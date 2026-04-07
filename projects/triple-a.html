@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Authoring Accelerator Agent — AI-powered DA content authoring pipeline for TurboTax's Digital Assistant team">
+    <title>Authoring Accelerator Agent - Nischal Kelwadkar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Nav -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">NISCHAL KELWADKAR</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <article class="project-page">
+        <div class="container">
+            <a href="../index.html#work" class="back-link">← Back to Work</a>
+
+            <header class="project-header">
+                <h1>Authoring Accelerator Agent</h1>
+                <p class="project-subtitle">Building an AI authoring pipeline to preserve DA content quality after a critical expert dependency ends</p>
+                <div class="project-meta">
+                    <span class="meta-item"><strong>Client:</strong> Intuit ProTax Group (TurboTax)</span>
+                    <span class="meta-item"><strong>Year:</strong> 2025–2026</span>
+                    <span class="meta-item"><strong>Deliverables:</strong> Local search tool (Python + HTML), system prompt engineering, IDF-weighted scoring system, 768-utterance golden dataset</span>
+                </div>
+            </header>
+
+            <section class="project-section">
+                <h2>Overview</h2>
+                <!-- IMAGE: Tool running in browser — single search mode showing utterance input, DA response with confidence badge, citation blocks -->
+                <p>The TurboTax Digital Assistant authoring pipeline had a hard deadline built into it: a team of domain experts who had been lending 3 days a week to hand-author DA responses was offboarding on April 16th. After that date, there was no plan. The pipeline that had taken 2 business days to produce 100 utterance responses — across 7 experts and 2–4 lead reviewers — would simply stop.</p>
+                <p>Triple A is the system I designed and built to resolve that dependency before the deadline hit. It takes real customer utterances, searches 3,684 articles across the TTLC, Tax Tips, and IRS catalogs, and generates style-guide-compliant DA responses with confidence scoring, source citations, and gap analysis. What took the expert team 2 days now takes the tool under 5 minutes — and at 76.6% HIGH + MEDIUM confidence, only the remaining LOW-confidence outputs need the kind of expert review the team was previously providing for everything.</p>
+                <p class="highlight">This isn't a customer-facing product. It's infrastructure — built so the DA content team could continue operating independently after a critical external resource disappeared.</p>
+            </section>
+
+            <section class="project-section">
+                <h2>The Problem</h2>
+                <p>TurboTax's Digital Assistant serves customers across millions of tax conversations. Keeping those responses accurate and current requires a continuous authoring process: take real customer utterances, verify whether the right catalog content exists to answer them, write DA responses that follow the Intuit Conversational Design Style Guide, and flag gaps for the content roadmap.</p>
+                <p>That work was being done by a borrowed team. Seven domain experts, with 2–4 leads reviewing their output, were lending 3 days a week (Monday through Wednesday) to author DA responses — work that wasn't their primary responsibility. At that pace, 100 utterances took 2 full business days. And on April 16th, those experts were offboarding after tax season. The pipeline had an expiration date.</p>
+                <p>Beyond the capacity cliff, there was a quality tooling problem. The team had previously attempted to use a Gemini Gem backed by NotebookLM notebooks as a starting point for authoring. It worked inconsistently — notebooks randomly disconnected, the Gem pulled web search results instead of catalog content despite explicit instructions, and output formatting was unreliable. It was good enough to demo, not reliable enough to build a workflow around.</p>
+                <p class="highlight">The real problem wasn't that the process was slow. It was that the process was structurally fragile — dependent on borrowed experts, capped at a fraction of the utterance volume needed, and pointed at a hard end date with no successor plan.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="architecture">How It Works</h2>
+                <!-- IMAGE: Architecture diagram or annotated tool UI showing the three pipeline stages -->
+                <p>Triple A has three layers. The first is a Python pre-filter that runs instantly — it classifies the utterance's intent (tax question, product support, navigation, refund status), extracts IRS form identifiers (1099-R, 1098-T, Schedule E), routes to 1–2 relevant topic buckets, and scores every article in those buckets using an IDF-weighted system. The top 10 candidates pass to the next layer.</p>
+                <p>The second layer is Claude Code CLI, called as a subprocess. It receives a system prompt I wrote — roughly 3,000 words of content design rules, citation format specs, and DA response guidance drawn from the Intuit Conversational Design Style Guide — plus the pre-filtered articles, plus the customer utterance. It returns a structured response: a search log, a suggested DA response, citation blocks with article excerpts and URLs, a confidence level (HIGH / MEDIUM / LOW), and a gap summary.</p>
+                <p>The third layer is the browser frontend — a single-file HTML/CSS/JS app that renders the response, color-codes confidence (green for HIGH, yellow for MEDIUM/LOW), auto-injects the best source link into the DA response, and handles batch mode with a progress bar and session history. The frontend also does meaningful post-processing: it moves the DA response block to a consistent position regardless of where Claude places it in the output, and infers confidence from response content when Claude's label is missing. Both were necessary because prompt instructions alone weren't reliable enough.</p>
+
+                <h3>The Scoring System</h3>
+                <p>The Python pre-filter does real work — it's not just keyword search. The scoring system applies a cascade of signals: form-number exact matching (+200 for the right form, −200 for a wrong-family variant), intent-based bonuses and penalties (IRS content gets −200 for product support queries), multi-word phrase matches, title focus scoring, and IDF-boosted word weights. A minimum threshold of 35 points filters out low-signal matches entirely. When nothing clears that bar, the tool returns "Sufficient content not available in corpus" instead of serving a wrong article.</p>
+                <p>That threshold matters. Without it, the tool would always return something — even if that something shared only one common word with the utterance. The explicit "I don't know" signal is more useful than a confident wrong answer.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="system-prompt">The System Prompt Is the Design</h2>
+                <p>On a conventional product, the UX is in the interface. On Triple A, the most consequential design work happened in the system prompt — a 3,000-word document that defines what the tool is, how it reasons, and what it produces.</p>
+                <p>The prompt specifies: the tool's role (content catalog search engine, not tax advisor), the three sources and how to prioritize them, the exact citation format including table structure and required fields, the confidence tier definitions, URL validation rules (CATALOG vs. IRS REFERENCE vs. ⚠️ WEB RESULT), and the DA response rules — plainspoken, neutral, 2–4 sentences, guide role, always end with the best resource link.</p>
+                <p>Those DA response rules are drawn directly from the Intuit Conversational Design Style Guide. The prompt doesn't just instruct Claude to "write a response" — it encodes years of UX content guidance into the generation context, making the style guide machine-executable.</p>
+                <p class="highlight">Getting the prompt right was an iterative process. Several instructions that seemed clear in writing got ignored in practice — Claude wouldn't reliably include a link in every DA response, and it would place the DA response in inconsistent positions. Rather than infinitely iterating on the prompt, I moved those responsibilities to the frontend. The prompt handles what LLMs do well; the code handles what they don't.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="iteration">Three Approaches Before One That Shipped</h2>
+                <p>The development history is worth including here because it's not just backstory — it's a demonstration of systems thinking applied to a moving constraint.</p>
+                <p><strong>Approach 1: Gemini Gem + NotebookLM.</strong> Split 3,390 articles into 7 topic-based NotebookLM notebooks, built a Gem to query them. Iterated through 3 prompt versions. The fundamental problem: Gem notebooks randomly disconnect (a known Gemini bug), and the Gem would pull web search results despite instructions to only use the notebooks. Unreliable for production use.</p>
+                <p><strong>Approach 2: Static web app with LLM API.</strong> Built index.html as a static app, deployed to GitHub Pages. Clean architecture. One problem: no path to an API key. Anthropic console locked down, OpenAI enterprise account had no credits, Intuit's internal GenOS required DevOps permissions I didn't have. Built and deployed, unusable.</p>
+                <p><strong>Approach 3: Local Python server + Claude Code CLI.</strong> Realized Claude Code CLI could be called as a subprocess. Built a Python server to do the pre-filtering and serve the frontend, piping prompts to Claude at the local user level. Each team member runs it themselves — no shared keys, no server to maintain. This is what shipped.</p>
+                <p>The constraint that broke approaches 1 and 2 (API access) became irrelevant in approach 3 by changing the deployment model. The technical lift was the same; the distribution model was different.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="golden-dataset">Golden Dataset: Measuring Quality at Scale</h2>
+                <!-- IMAGE: Summary table from batch mode showing utterances, confidence badges, DA responses, gap notes -->
+                <p>Triple A includes a <code>/golden</code> skill for Claude Code — a slash command that processes 100 to 1,000+ utterances in parallel using batched subagents. I used it to build and evaluate a 768-utterance golden dataset, running the full corpus through the tool and tracking confidence outcomes across versions.</p>
+
+                <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0;">
+                    <thead>
+                        <tr style="background: var(--color-bg-alt);">
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--color-border);">Metric</th>
+                            <th style="padding: 0.75rem; text-align: center; border-bottom: 2px solid var(--color-border);">V1 (Initial)</th>
+                            <th style="padding: 0.75rem; text-align: center; border-bottom: 2px solid var(--color-border);">V4 (Current)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">HIGH confidence</td>
+                            <td style="padding: 0.75rem; text-align: center; border-bottom: 1px solid var(--color-border);">72.0% (553)</td>
+                            <td style="padding: 0.75rem; text-align: center; border-bottom: 1px solid var(--color-border);">55.6% (427)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--color-border);">MEDIUM confidence</td>
+                            <td style="padding: 0.75rem; text-align: center; border-bottom: 1px solid var(--color-border);">24.9% (191)</td>
+                            <td style="padding: 0.75rem; text-align: center; border-bottom: 1px solid var(--color-border);">21.0% (161)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem;">LOW confidence</td>
+                            <td style="padding: 0.75rem; text-align: center;">3.1% (24)</td>
+                            <td style="padding: 0.75rem; text-align: center;">23.4% (180)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>The HIGH rate dropped significantly from V1 to V4 — and that's the right outcome. V1's inflated HIGH rate was a false signal: the tool had no way to say "I can't help with this," so it defaulted to HIGH confidence even on wrong-topic responses. V4 added an explicit minimum score threshold that causes the tool to return "Sufficient content not available in corpus" when nothing relevant exists. The 156 utterances reclassified from HIGH to LOW are real content gaps — not regressions.</p>
+                <p>This is what evaluation looks like in an AI content system: not chasing a higher number, but understanding what the number actually means.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="impact">Impact</h2>
+                <p>The before-and-after is stark: 100 utterances took the expert team 2 business days. Triple A processes 100 in under 5 minutes.</p>
+                <p>But the more meaningful shift is what happens to the review burden. With 76.6% of outputs landing at HIGH or MEDIUM confidence, the expert-level judgment that was previously required for every single utterance is now only required for roughly 1 in 4. The HIGH and MEDIUM outputs come back with citations, sourced excerpts, and style-guide-aligned responses ready for a light review pass. Only the LOW-confidence outputs — the ones where the corpus genuinely doesn't have a good answer — need the kind of full authoring the team was doing for everything before.</p>
+                <p>That triage model is what makes the tool sustainable past April 16th. The team doesn't need the domain experts to handle everything anymore. They need them — or their own content judgment — for the cases that actually require it.</p>
+                <ul>
+                    <li>2 business days → under 5 minutes for 100 utterances</li>
+                    <li>76.6% of outputs (HIGH + MEDIUM) ready for light review, not full authoring</li>
+                    <li>50 utterances in ~3 minutes via batch mode; 1,000+ overnight via parallel agent pipeline</li>
+                    <li>768-utterance golden dataset built and quality-evaluated across 4 versions</li>
+                    <li>Distributable to any teammate — no API keys, no shared server, no DevOps dependency</li>
+                    <li>Content gap identification surfaced as structured data for the content roadmap</li>
+                    <li>DA authoring pipeline preserved past the April 16th expert offboarding date</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 id="what-this-demonstrates">What This Demonstrates</h2>
+                <p>Triple A sits at an intersection that's increasingly where content design lives: the system prompt is a content deliverable, the scoring logic encodes editorial judgment, and the tool architecture is a UX decision with downstream consequences for every team member who uses it.</p>
+                <p>But the more fundamental thing this project demonstrates is how I approach a problem with a hard deadline. The expert team's availability wasn't going to extend. The API access barriers weren't going to clear on a useful timeline. The Gemini tooling wasn't going to become reliable through more prompt iteration. Each of those was a real constraint, not a temporary obstacle — and the right response to each was to route around it, not wait it out.</p>
+                <p>The tool shipped before April 16th. The documentation is thorough enough for any teammate to run it independently. The golden dataset is a versioned quality artifact the team can re-run as the corpus evolves. The pipeline that was going to stop now has a path forward.</p>
+                <p class="highlight">I saw the cliff. I built the bridge. That's the project.</p>
+            </section>
+
+            <footer class="project-footer">
+                <a href="../index.html#work" class="back-link-bottom">← Back to Work</a>
+            </footer>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nischal Kelwadkar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
