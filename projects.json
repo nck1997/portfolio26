@@ -12,7 +12,7 @@
         "Bulk and scheduled automations",
         "Writer setup guides"
       ],
-      "summary": "I designed and built the Claude plugin Intuit's help-content writers use to edit a 20,700+ piece knowledge base in plain English. Every change is saved as a Draft, checked, and verified, and nothing publishes until a writer says yes. Three writers updated 150+ articles with it in the first week, about three times a normal week.",
+      "summary": "I pitched, designed, and built the Claude plugin Intuit's help-content writers use to edit a 20,700+ piece knowledge base in plain English, including every connection to WordPress. Every change is saved as a Draft, checked, and verified, and nothing publishes until a writer says yes. The first week the whole team had it, we updated 5.5x as many articles as two weeks before.",
       "featured": true,
       "tags": [
         "AI Systems Design",

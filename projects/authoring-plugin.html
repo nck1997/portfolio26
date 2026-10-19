@@ -45,7 +45,8 @@
                 <h2 id="overview">Overview</h2>
                 <p>Intuit's help content lives in a knowledge base of more than 20,000 articles, notices, and reusable blocks across TurboTax, Credit Karma, and the professional tax products. Our writers kept it current by hand, one article at a time, in a WordPress editor that was never built for bulk work.</p>
                 <p>I pitched a way to change that, built it, and spent most of 2026 getting it to the point where the whole team could use it. Writers now tell Claude what they need ("work this Jira ticket," "replace this phrase in every ProSeries article that mentions it," "add this screenshot to step 3") and the plugin does the work. It finds the articles, makes the change, checks it against our standards, saves it as a Draft, confirms the change landed, and shows a before/after table. Nothing goes live until a writer says yes.</p>
-                <p>In its first week with the team, three of our five writers updated 150+ articles through it. A normal week for the whole team is about 50.</p>
+                <p>This was my idea and my build. I designed the skills library and how the pieces fit together, and I built every connection to WordPress myself: first through the REST API, then straight to the CMS team's MCP server, then through Intuit's new desktop access layer when the old route was retired.</p>
+                <p>The first week the whole team had it, we updated 5.5 times as many articles as two weeks earlier, when only two of us were using it. That's with four of five writers onboarded and before content refresh season, our busiest stretch, has started.</p>
             </section>
 
             <section class="project-section">
@@ -117,7 +118,9 @@
                     <a href="../images/plugin-first-week.svg" target="_blank" rel="noopener"><img src="../images/plugin-first-week.svg" alt="Bar chart: a typical week the whole team updates about 50 articles by hand; in the first week with the plugin, three of five writers updated 150 or more" class="project-img diagram" /></a>
                 </figure>
                 <ul>
-                    <li>150+ articles updated through the plugin in its first week, about three times the team's usual weekly volume, from three of five writers. That counts only edits we've confirmed went through the plugin, and it was before content refresh season started.</li>
+                    <li>5.5 times as many articles updated in the first week the whole team had the plugin, compared with two weeks earlier, when only another writer and I had it.</li>
+                    <li>150+ confirmed plugin edits that week from three writers, about three times the team's usual weekly volume.</li>
+                    <li>All of this before content refresh season started, with four of five writers onboarded and a round of their feedback still to work into the next release. The numbers should keep climbing.</li>
                     <li>About 1,060 hours a year saved, by the team's estimate. Before refresh season, the writers who've done it in past years listed the tasks this would cover and how long each takes. The biggest item, roughly 900 hours of refresh editing, is the one I built for first.</li>
                     <li>A single edit went from 3 to 5 minutes by hand to about 30 seconds.</li>
                     <li>20,700+ articles, notices, and reusable blocks reachable across consumer, small business, and professional tax help.</li>

@@ -142,6 +142,9 @@
             .header, .footer, .resume-actions, .back-link {
                 display: none;
             }
+            .print-page-break {
+                break-before: page;
+            }
             .resume-page {
                 max-width: 100%;
                 padding: 0;
@@ -196,9 +199,10 @@
 
             <div class="subsection">Selected Impact</div>
             <ul>
-                <li>Designed and built the <a href="projects/authoring-plugin.html" class="project-link">AI authoring plugin</a> Intuit's Customer Success writers use to edit the live help knowledge base in plain English. Its 18 skills turn Jira tickets, SME requests, and product specs into reviewed Drafts, with <a href="projects/authoring-plugin.html#safety" class="project-link">one human approval before publishing</a>, a before/after report, and rollback on every change. Shipped through Intuit's internal plugin registry; three writers updated 150+ articles with it in the first week, about three times a normal week.</li>
-                <li>Gave writers <a href="projects/authoring-plugin.html#bulk" class="project-link">bulk editing</a> across 20,700+ help articles and content blocks for the first time: CSV-driven find-and-replace, tag, and SEO changes with an audit receipt. Cut a single edit from 3–5 minutes by hand to about 30 seconds and replaced an 8-step manual edit flow with one command. Teammates estimate it saves ~1,060 hours a year on the team's top content refresh tasks.</li>
-                <li>Moved the team to a new authenticated production access path ahead of a hard cutoff. Verified it on Mac and Windows, removed shared credentials so every change is recorded under the writer's own name, and wrote <a href="projects/authoring-plugin.html#onboarding" class="project-link">plain-language setup and sign-in repair guides</a> for non-technical writers.</li>
+                <li>Pitched, designed, and built the <a href="projects/authoring-plugin.html" class="project-link">AI authoring plugin</a> Intuit's Customer Success writers use to edit the live help knowledge base in plain English. Its 18 skills turn Jira tickets, SME requests, and product specs into reviewed Drafts, with <a href="projects/authoring-plugin.html#safety" class="project-link">one human approval before publishing</a>, a before/after report, and rollback on every change. Shipped through Intuit's internal plugin registry.</li>
+                <li>Built the plugin's <a href="projects/authoring-plugin.html#bulk" class="project-link">bulk editing system</a> end to end, giving writers find-and-replace, tag, and SEO changes across 20,700+ help articles and content blocks, with an audit receipt for every run. A single edit dropped from 3–5 minutes by hand to about 30 seconds, and an 8-step manual flow became one command. Teammates estimate it saves ~1,060 hours a year on the team's top content refresh tasks.</li>
+                <li>Built every <a href="projects/authoring-plugin.html#timeline" class="project-link">connection layer</a> myself as access changed: first WordPress's REST API, then a direct connection to the CMS team's MCP server, then Intuit's new desktop access layer ahead of a hard cutoff. Verified on Mac and Windows, with every change recorded under the writer's own name and plain-language setup guides for non-technical writers.</li>
+                <li>In the first week the whole team had the plugin, we updated 5.5x as many articles as two weeks earlier, when only two of us had it. That includes 150+ confirmed plugin edits, about three times a normal week, before content refresh season even started.</li>
                 <li>Won an internal Intuit AI skills competition, then built the resulting Master Content Plugin from a product PRD. It turns a feature spec into a per-brand launch package (expert and customer FAQs, knowledge base audit, brand voice and AI-readiness review) for TurboTax, Credit Karma, and ProTax. A live audit found 69 affected articles in 47 seconds.</li>
                 <li>Designed and built <a href="projects/triple-a.html" class="project-link">Authoring Accelerator Agent</a> to keep TurboTax Digital Assistant authoring running after a 7-person expert team offboarded. It processes 100 customer utterances in under 5 minutes (down from 2 business days), writes style-guide-compliant responses with confidence scoring, and cut full expert review to ~23% of outputs. Since extended to a ~7,000-article ProTax corpus.</li>
                 <li><a href="projects/tax-season-automation.html#python-solution" class="project-link">Automated daily updates</a> to compliance-critical help articles: a Python script cut the daily Agency Approvals update from 30–60 minutes to about 5 seconds, and scheduled automations now rebuild and publish the Delayed Acknowledgments article with no writer involved. New known issues are proposed for review, never published automatically.</li>
@@ -206,7 +210,7 @@
                 <li>GenAI Ambassador and the first Claude Code adopter in the ProTax group; team Rockstar award (August 2026); guest lecturer at the University of North Texas.</li>
             </ul>
 
-            <div class="job-header">
+            <div class="job-header print-page-break">
                 <span class="job-title">UX Content Designer – CGI Inc.</span>
                 <span class="job-dates">June 2021 – June 2023</span>
             </div>
