@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Tax Product Form Help - In-product guidance for regulated tax environment">
+    <meta name="description" content="Professional Tax Product Form Help: field-level guidance inside Lacerte, Intuit's software for professional accountants">
     <title>Professional Tax Product Form Help - Nischal Kelwadkar</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/project.css">
@@ -30,10 +30,10 @@
     <article class="project-page">
         <div class="container">
             <a href="../index.html#work" class="back-link">← Back to Work</a>
-            
+
             <header class="project-header">
                 <h1>Professional Tax Product Form Help</h1>
-                <p class="project-subtitle">Designing in-product, form-level guidance within a regulated tax environment</p>
+                <p class="project-subtitle">Putting the right guidance inside the tax form, at the field where accountants get stuck</p>
                 <div class="project-meta">
                     <span class="meta-item"><strong>Client:</strong> Intuit ProTax Group</span>
                     <span class="meta-item"><strong>Year:</strong> 2023-Present</span>
@@ -45,149 +45,88 @@
                 <div class="project-hero-image">
                     <img src="../images/Wireframe notes.webp" alt="Design process wireframes" />
                 </div>
-                <p>This project focuses on how in-product, form-level guidance was designed, operationalized, and scaled within a regulated tax environment.</p>
-                <p class="highlight">The goal of this system was not simply to add more help content, but to design a preventative content layer that reduces errors, minimizes support dependency, and preserves user trust during high-risk workflows.</p>
+                <p>Lacerte is Intuit's tax software for professional accountants. I own its form-level help: the short guidance that appears right next to a field while someone is filling out a return. This page covers how I decide where that help goes, how I write it, and how it gets into the product.</p>
+                <p class="highlight">The aim is to head off mistakes in the form before they turn into support calls, without burying accountants in text they don't need.</p>
             </section>
 
             <section class="project-section">
                 <h2>Problem Framing</h2>
-                <p>A professional tax product, Lacerte supports hundreds of federal and state tax forms across multiple tax entities. Many individual inputs:</p>
-                <ul>
-                    <li>Represent complex tax concepts</li>
-                    <li>Depend on nuanced eligibility rules</li>
-                    <li>Carry downstream compliance risk if completed incorrectly</li>
-                </ul>
-                <p>Despite comprehensive external documentation, users frequently encountered confusion <strong>at the exact moment of data entry</strong>, leading to:</p>
-                <ul>
-                    <li>Form errors discovered late in the workflow</li>
-                    <li>Increased calls to support</li>
-                    <li>Repeat questions tied to the same high-friction inputs</li>
-                </ul>
-                <p class="highlight">The core challenge was not content coverage, but contextual delivery.</p>
+                <p>Lacerte supports hundreds of federal and state tax forms across individual, partnership, corporate, and other returns. A lot of individual fields stand for complicated tax concepts, depend on eligibility rules with exceptions, and cause compliance problems later if they're filled out wrong.</p>
+                <p>We had thorough documentation outside the product. The trouble was that accountants got confused <strong>at the moment they were entering data</strong>, and a separate help site doesn't help much then. Errors got caught late in the return, support got more calls, and the same handful of fields kept generating the same questions.</p>
+                <p class="highlight">The help existed. It just wasn't on the screen where accountants needed it.</p>
             </section>
 
             <section class="project-section">
                 <h2>My Role & Ownership</h2>
-                <p>As a UX Content Designer on the ProTax Group Digital Delivery team, I owned the Lacerte Forms Help experience end-to-end, including:</p>
-                <ul>
-                    <li>Identifying which form inputs required additional guidance</li>
-                    <li>Defining content patterns and terminology standards</li>
-                    <li>Writing and maintaining the underlying help content</li>
-                    <li>Translating content strategy into technical artifacts consumable by the product</li>
-                    <li>Partnering with engineering, tax development, and compliance teams to ship updates safely</li>
-                </ul>
+                <p>I'm a content designer on the ProTax Group Digital Delivery team, and I own Lacerte form help end to end. I decide which fields get guidance, set the content patterns and terminology, write and maintain the help, turn it into files the product can load, and work with engineering, tax development, and compliance to ship updates safely.</p>
             </section>
 
             <section class="project-section">
                 <h2 id="identifying-high-risk">Identifying High-Risk Inputs</h2>
-                <p>Not all form inputs warrant in-product help. To prioritize effectively, I evaluated inputs based on:</p>
+                <p>Not every field needs help, and adding it everywhere just creates noise. To decide where it goes, I look at four things:</p>
                 <ul>
-                    <li>Frequency of related support contacts</li>
-                    <li>Historical confusion or misinterpretation</li>
-                    <li>Regulatory sensitivity</li>
-                    <li>Downstream impact of incorrect entry</li>
+                    <li>How often the field comes up in support contacts</li>
+                    <li>Whether people have misread it in the past</li>
+                    <li>How sensitive it is from a regulatory standpoint</li>
+                    <li>How much damage a wrong entry does later in the return</li>
                 </ul>
-                <p>This ensured the system focused on <strong>high-leverage moments</strong>, rather than overwhelming users with excessive guidance.</p>
+                <p>That keeps the help focused on the fields where it makes a difference.</p>
             </section>
 
             <section class="project-section">
                 <h2 id="content-design-strategy">Content Design Strategy</h2>
-                
+
                 <div class="project-hero-image">
                     <img src="../images/color wire.webp" alt="Structured content design approach" />
                 </div>
-                
+
                 <h3 id="writing-in-product">Writing for In-Product Context</h3>
-                <p>Form-level help content was written to:</p>
-                <ul>
-                    <li>Assume users are mid-task and time-constrained</li>
-                    <li>Focus on <strong>what to enter</strong> and <strong>why it matters</strong></li>
-                    <li>Avoid unnecessary tax theory unless required for correctness</li>
-                </ul>
-                <p>Tone and structure prioritized clarity, neutrality, and confidence.</p>
+                <p>I write form help for someone in the middle of a return, usually under deadline. It says <strong>what to enter</strong> and <strong>why it matters</strong>, and skips tax theory unless it's needed to get the entry right. The tone is plain and neutral, and it doesn't hedge.</p>
 
                 <h3 id="terminology">Terminology & Pattern Consistency</h3>
-                <p>To scale across thousands of inputs, I:</p>
-                <ul>
-                    <li>Established repeatable content patterns</li>
-                    <li>Standardized terminology across similar concepts</li>
-                    <li>Reduced variation that could introduce doubt or confusion</li>
-                </ul>
+                <p>With thousands of fields, consistency matters more than any single piece of help. I set up repeatable patterns for common types of guidance and standardized the terms we use for similar concepts. When two fields mean similar things, the help describes them the same way, so accountants don't wonder whether a difference in wording means a difference in the rules.</p>
             </section>
 
             <section class="project-section">
                 <h2 id="technical-implementation">Technical Implementation</h2>
-                
+
                 <h3>Mapping Forms to Content</h3>
-                <p>Each help access point required precise mapping between:</p>
-                <ul>
-                    <li>Tax module (e.g., Individual, Partnership, Corporation)</li>
-                    <li>Jurisdiction (Federal or State)</li>
-                    <li>Form container</li>
-                    <li>Specific input field</li>
-                </ul>
-                <p>I documented these mappings in structured CSV files, with each row representing a single in-product access point.</p>
+                <p>Every piece of help has to attach to exactly one spot in the product. That means mapping it to a tax module (Individual, Partnership, Corporation, and so on), a jurisdiction (federal or state), a form, and the specific field. I keep those mappings in structured CSV files, one row per help access point.</p>
 
                 <h3 id="deep-linking">Deep-Linking Strategy</h3>
-                <p>Rather than linking to generic articles, help access points used <strong>anchor links</strong> that:</p>
-                <ul>
-                    <li>Dropped users into the exact relevant section</li>
-                    <li>Reduced scanning and cognitive load</li>
-                    <li>Kept users oriented within the task</li>
-                </ul>
+                <p>When help points to a longer article, it uses <strong>anchor links</strong> that land on the exact section, not the top of a generic page. Accountants don't have to scan for the answer, and they can get back to the form quickly.</p>
 
                 <h3 id="build-release">Build & Release Pipeline</h3>
-                <p>The CSV files were converted into XML and delivered to engineering partners for inclusion in product updates. This pipeline ensured:</p>
-                <ul>
-                    <li>Version control</li>
-                    <li>Predictable release cycles</li>
-                    <li>Clear ownership of changes</li>
-                </ul>
+                <p>The CSV files are converted to XML and handed to engineering for each product update. That gives us version control, a predictable release schedule, and a clear record of who changed what.</p>
             </section>
 
             <section class="project-section">
                 <h2 id="cross-functional">Cross-Functional Collaboration</h2>
-                <p>Shipping form-level help required alignment across:</p>
-                <ul>
-                    <li>Tax subject-matter experts (accuracy)</li>
-                    <li>Engineering (delivery and performance)</li>
-                    <li>Compliance and legal teams (risk mitigation)</li>
-                </ul>
-                <p>Tradeoffs were often necessary between:</p>
-                <ul>
-                    <li>Completeness and brevity</li>
-                    <li>Speed of delivery and review rigor</li>
-                    <li>Flexibility and standardization</li>
-                </ul>
+                <p>Every update needs sign-off from tax subject-matter experts for accuracy, engineering for delivery, and compliance and legal for risk. The tradeoffs come up constantly: how complete the help should be versus how short, how fast we ship versus how deep the review goes, and how much each field can bend the standard pattern.</p>
             </section>
 
             <section class="project-section">
                 <h2>Outcomes & Learnings</h2>
-                
+
                 <h3>What Worked</h3>
                 <ul>
-                    <li>Designing content as part of the product, not an external reference</li>
-                    <li>Prioritizing high-risk moments over exhaustive coverage</li>
-                    <li>Building repeatable systems rather than one-off solutions</li>
+                    <li>Treating the help as part of the product, written for the screen it appears on</li>
+                    <li>Covering the risky fields well before trying to cover every field</li>
+                    <li>Building patterns we can reuse every release</li>
                 </ul>
 
                 <h3>What I'd Improve</h3>
                 <ul>
-                    <li>Earlier instrumentation for measuring in-product usage</li>
-                    <li>Faster feedback loops from support teams</li>
-                    <li>Expanded automation for identifying new high-risk inputs</li>
+                    <li>Measuring in-product usage from the start</li>
+                    <li>Hearing from support teams sooner</li>
+                    <li>Automating how we find new problem fields</li>
                 </ul>
             </section>
 
             <section class="project-section">
                 <h2 id="trust-safety">Why This Matters for Trust & Safety</h2>
-                <p>Trust & Safety work often focuses on:</p>
-                <ul>
-                    <li>Preventing user harm</li>
-                    <li>Reducing error states</li>
-                    <li>Supporting users in moments of uncertainty</li>
-                </ul>
-                <p class="highlight">This project demonstrated how in-product content design can function as a Trust & Safety mechanism, quietly preventing issues before they escalate and reinforcing trust through clarity and restraint.</p>
+                <p>Trust & Safety work is about preventing harm, cutting down on error states, and helping people when they're unsure. Form help does a version of that. Accountants are filing returns for their clients, and a wrong entry can cost those clients money or create a compliance problem.</p>
+                <p class="highlight">Good form help catches the mistake while the accountant is still on the field, before it becomes a problem for their client.</p>
             </section>
 
             <footer class="project-footer">

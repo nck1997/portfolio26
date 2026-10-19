@@ -236,3 +236,9 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+/* Diagrams drawn at phone width; keep them readable on desktop */
+.project-figure .project-img.diagram {
+    max-width: 520px;
+    box-shadow: none;
+}

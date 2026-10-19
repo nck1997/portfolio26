@@ -3,39 +3,39 @@
     {
       "id": "authoring-plugin",
       "title": "Help-Content Authoring Plugin",
-      "tagline": "Turning one-off article fixes into reviewed, repeatable workflows a whole writing team can run in plain English",
+      "tagline": "How a writing team went from editing help articles one at a time to asking Claude for the change",
       "client": "Intuit Customer Success (TurboTax, Credit Karma, ProTax)",
       "deliverables": [
         "Claude Code plugin (18 skills)",
         "Edit pipeline with verification",
-        "Human-in-the-loop safety model",
-        "Bulk-edit and scheduled automations",
-        "Writer onboarding guides"
+        "Approval model",
+        "Bulk and scheduled automations",
+        "Writer setup guides"
       ],
-      "summary": "Designed and built the AI plugin Intuit's help-content writers use to edit a 20,700+ piece knowledge base in plain English. Every change is saved as a Draft, checked against brand standards, verified, and published only after a writer's yes. Single edits went from 3–5 minutes to about 30 seconds, and the plugin now ships through Intuit's internal plugin registry.",
+      "summary": "I designed and built the Claude plugin Intuit's help-content writers use to edit a 20,700+ piece knowledge base in plain English. Every change is saved as a Draft, checked, and verified, and nothing publishes until a writer says yes. Three writers updated 150+ articles with it in the first week, about three times a normal week.",
       "featured": true,
       "tags": [
         "AI Systems Design",
         "Content Operations",
-        "Human-in-the-loop",
-        "Claude Code"
+        "Claude Code",
+        "Automation"
       ],
       "year": "2026",
-      "image": "images/design mac.webp"
+      "image": "images/plugin-card.svg"
     },
     {
       "id": "triple-a",
       "title": "Authoring Accelerator Agent",
-      "tagline": "Building an AI authoring pipeline to preserve DA content quality after a critical expert dependency ends",
+      "tagline": "Keeping TurboTax's Digital Assistant authoring going after the expert team behind it offboarded",
       "client": "Intuit ProTax Group (TurboTax)",
       "deliverables": [
         "Local search tool (Python + HTML)",
-        "System prompt engineering",
-        "IDF-weighted scoring system",
+        "System prompt",
+        "Weighted scoring system",
         "768-utterance golden dataset",
-        "Claude Code CLI integration"
+        "Claude Code integration"
       ],
-      "summary": "The DA authoring pipeline relied on borrowed domain experts offboarding April 16th — 7 specialists lending 3 days/week to a process that took 2 business days per 100 utterances. I built Authoring Accelerator Agent to resolve that dependency before the deadline. It searches 3,684 articles, generates style-guide-compliant DA responses with confidence scoring and gap analysis, and processes 100 utterances in under 5 minutes. At 76.6% HIGH + MEDIUM confidence, only the LOW-tier outputs need full expert review.",
+      "summary": "Seven borrowed tax experts were writing Digital Assistant answers, 2 business days per 100 questions, and they were leaving on April 16. I built a tool before then that searches 3,684 articles and drafts style-guide answers with sources and a confidence rating. It does 100 in under 5 minutes, and about three in four come back ready for a light review.",
       "featured": true,
       "tags": [
         "AI Systems Design",
@@ -44,12 +44,12 @@
         "Automation"
       ],
       "year": "2025–2026",
-      "image": "images/triple-a-preview.webp"
+      "image": "images/triple-a-preview.svg"
     },
     {
       "id": "ai-content-systems",
       "title": "AI Content Systems at Intuit",
-      "tagline": "Designing AI-assisted content infrastructure to scale clarity, consistency, and access",
+      "tagline": "Turning thousands of help articles into something writers and support experts could search and reuse",
       "client": "Intuit ProTax Group",
       "deliverables": [
         "AI-powered content system",
@@ -57,7 +57,7 @@
         "Internal GPTs",
         "Slack integrations"
       ],
-      "summary": "Built an AI-assisted content system that structured ~4,000 help articles, enabling faster authoring, consistent reuse, and expanded access for support teams.",
+      "summary": "I structured about 4,000 help articles, with their URLs and metadata, so writers could find and reuse what we'd already written and support experts without AI access could still get answers.",
       "featured": true,
       "tags": [
         "Content Strategy",
@@ -70,7 +70,7 @@
     {
       "id": "tax-season-automation",
       "title": "Tax Season Content Automation",
-      "tagline": "Replacing a daily 30-60 minute manual workflow with a single Python command",
+      "tagline": "Replacing a daily 30 to 60 minute manual workflow with one Python command",
       "client": "Intuit ProTax Group",
       "deliverables": [
         "Python automation script",
@@ -78,7 +78,7 @@
         "Smartsheet integration",
         "WordPress publishing automation"
       ],
-      "summary": "Identified and automated a complex, error-prone daily workflow during tax season that involved CSV exports, Smartsheet updates, and WordPress publishing. Reduced a 10-step manual process to a single 5-second command, eliminating systematic errors including duplicate rows and formatting issues.",
+      "summary": "Every day of tax season, someone spent 30 to 60 minutes moving approval data from CSVs through Smartsheet into WordPress, and the same errors kept showing up. I wrote a Python script that does all 10 steps in about 5 seconds.",
       "featured": true,
       "tags": [
         "Automation",
@@ -92,7 +92,7 @@
     {
       "id": "lacerte-forms-help",
       "title": "Professional Tax Product Form Help",
-      "tagline": "Designing in-product, form-level guidance within a regulated tax environment",
+      "tagline": "Putting the right guidance inside the tax form, at the field where accountants get stuck",
       "client": "Intuit ProTax Group",
       "deliverables": [
         "In-product help system",
@@ -100,7 +100,7 @@
         "Content patterns",
         "Deep-linking framework"
       ],
-      "summary": "Designed preventative content layer for hundreds of tax forms, reducing errors and support dependency through contextual guidance at moment of need.",
+      "summary": "I own the field-level help inside Lacerte. I decide which of the hundreds of form fields need guidance, write it for someone mid-return, and ship it through a CSV-to-XML pipeline with engineering.",
       "featured": true,
       "tags": [
         "UX Content Design",

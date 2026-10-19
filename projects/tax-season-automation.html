@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tax Season Content Automation - Replacing a daily 30-60 minute manual workflow with a single Python command">
+    <meta name="description" content="Tax Season Content Automation: replacing a daily 30 to 60 minute manual workflow with one Python command">
     <title>Tax Season Content Automation - Nischal Kelwadkar</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/project.css">
@@ -30,10 +30,10 @@
     <article class="project-page">
         <div class="container">
             <a href="../index.html#work" class="back-link">← Back to Work</a>
-            
+
             <header class="project-header">
                 <h1>Tax Season Content Automation</h1>
-                <p class="project-subtitle">Replacing a daily 30-60 minute manual workflow with a single Python command</p>
+                <p class="project-subtitle">Replacing a daily 30 to 60 minute manual workflow with one Python command</p>
                 <div class="project-meta">
                     <span class="meta-item"><strong>Client:</strong> Intuit ProTax Group</span>
                     <span class="meta-item"><strong>Year:</strong> 2024-2025</span>
@@ -43,67 +43,58 @@
             <section class="project-section">
                 <h2>Overview</h2>
                 <div class="project-hero-image">
-                    <img src="../images/Wireframe notes.webp" alt="Automation workflow diagram" />
+                    <img src="../images/Wireframe notes.webp" alt="Planning notes for the automation" />
                 </div>
-                <p>During tax season, the Intuit ProTax content team needed to publish daily updates to Agency Approval help articles across multiple professional tax products. The existing process was entirely manual: export CSVs from an internal source, cross-reference and update rows in a Smartsheet, manually format content, copy it into WordPress, and publish. The full workflow took 30-60 minutes per day, was repeated every business day during the season, and was prone to systematic errors—duplicate rows, formatting inconsistencies, and missed updates.</p>
+                <p>Every business day during tax season, our team updated the Agency Approvals help articles for our professional tax products. These articles tell accountants which tax forms the tax agencies have approved for e-filing. The process was all manual: export CSVs from an internal source, update rows in a Smartsheet, format the content by hand, paste it into WordPress, and publish. It took 30 to 60 minutes a day, and it kept producing the same mistakes: duplicate rows, formatting that didn't match, and missed updates.</p>
                 <figure class="project-figure">
-                    <img src="../images/automation-title.jpg" alt="Agency E-File Approvals — From a 10-Step Manual Process to One Command" class="project-img" />
-                    <figcaption>Internal project summary presentation I created to document the automation's impact.</figcaption>
+                    <img src="../images/automation-title.jpg" alt="Agency E-File Approvals: from a 10-step manual process to one command" class="project-img" />
+                    <figcaption>The summary deck I made to show the team what changed.</figcaption>
                 </figure>
             </section>
 
             <section class="project-section">
                 <h2>The Problem</h2>
-                <p>The workflow involved 10 discrete manual steps across 4 different tools (internal data source, Excel/CSV, Smartsheet, WordPress). Each handoff introduced risk: duplicate rows from copy-paste errors, inconsistent formatting between articles, and no validation layer to catch mistakes before publishing.</p>
-                <p class="highlight">These articles are compliance-critical—professional accountants rely on them to know which tax forms have been approved by agencies, so errors directly impact trust and could lead to filing mistakes.</p>
+                <p>The workflow was 10 manual steps across 4 tools: the internal data source, Excel, Smartsheet, and WordPress. Every handoff was a chance for an error, and nothing checked the output before it went live.</p>
+                <p class="highlight">Accountants use these articles to decide whether they can file a form. An error here can turn into a filing mistake.</p>
                 <figure class="project-figure">
-                    <img src="../images/automation-old-process.jpg" alt="The Old Process — 10 manual steps required every business day during tax season" class="project-img" />
-                    <figcaption>The 10-step manual process that was repeated every business day during tax season.</figcaption>
+                    <img src="../images/automation-old-process.jpg" alt="The old process: 10 manual steps every business day during tax season" class="project-img" />
+                    <figcaption>The 10-step process we repeated every business day of the season.</figcaption>
                 </figure>
                 <figure class="project-figure">
                     <img src="../images/automation-errors.jpg" alt="Four recurring error types found during audit: duplicate rows, wrong year format, missing sections, wrong product data" class="project-img" />
-                    <figcaption>An audit of the manual output revealed four categories of systematic errors.</figcaption>
+                    <figcaption>When I audited the manual output, the errors fell into four repeat categories.</figcaption>
                 </figure>
             </section>
 
             <section class="project-section">
                 <h2 id="python-solution">The Solution</h2>
-                <p>Built a Python automation script that consolidates the entire pipeline into a single command. The script:</p>
-                <ul>
-                    <li>Pulls the source data</li>
-                    <li>Processes and deduplicates CSV rows</li>
-                    <li>Generates properly formatted article-ready HTML</li>
-                    <li>Integrates with the Smartsheet API for status tracking</li>
-                    <li>Prepares content for WordPress publishing</li>
-                </ul>
-                <p>What previously took 30-60 minutes of focused manual work now executes in approximately 5 seconds.</p>
+                <p>I wrote a Python script that does the whole thing in one command. It pulls the source data, removes duplicate rows, builds the article HTML in the right format, updates status in Smartsheet through its API, and gets everything ready for WordPress. It runs in about 5 seconds.</p>
                 <figure class="project-figure">
                     <img src="../images/automation-solution.jpg" alt="One Python command produces two ready-to-publish HTML files and a schema warnings log in under 5 seconds" class="project-img" />
-                    <figcaption>Everything that took 10 steps is now one command — runs in under 5 seconds.</figcaption>
+                    <figcaption>Ten steps became one command that runs in under 5 seconds.</figcaption>
                 </figure>
                 <h3 id="wordpress-publishing">Publishing to WordPress</h3>
-                <p>The script's output is article-ready HTML — formatted, validated, and structured to match the existing WordPress templates. The team member running the script simply copies the output HTML and pastes it into WordPress's Gutenberg editor, replacing the previous day's tables. What previously required navigating 8 sections, deleting old content, and pasting new content for each section is now a single paste operation per product.</p>
+                <p>The script's output already matches our WordPress templates. Whoever runs it pastes the HTML into the Gutenberg editor in place of the previous day's tables. Before, that meant going through 8 sections, deleting the old content, and pasting new content into each one. Now it's one paste per product.</p>
             </section>
 
             <section class="project-section">
                 <h2 id="impact">Impact</h2>
                 <ul>
-                    <li>Reduced daily workflow from 30-60 minutes to ~5 seconds</li>
-                    <li>Eliminated systematic errors (duplicate rows, formatting inconsistencies)</li>
-                    <li>Ensured 100% accuracy in compliance-critical content</li>
-                    <li>Freed up team capacity for higher-value content design work during the busiest season</li>
-                    <li>Process was documented and handed off so any team member could run it</li>
+                    <li>The daily update went from 30 to 60 minutes to about 5 seconds</li>
+                    <li>The repeat errors (duplicate rows, formatting mismatches) stopped</li>
+                    <li>The team got that time back during the busiest part of the year</li>
+                    <li>I documented the process so anyone on the team could run it</li>
                 </ul>
                 <figure class="project-figure">
-                    <img src="../images/automation-before-after.jpg" alt="Before vs After comparison showing improvements across 7 dimensions" class="project-img" />
-                    <figcaption>Before vs. after: every metric improved.</figcaption>
+                    <img src="../images/automation-before-after.jpg" alt="Before and after comparison across 7 measures" class="project-img" />
+                    <figcaption>Before and after, across the measures we tracked.</figcaption>
                 </figure>
             </section>
 
             <section class="project-section">
-                <h2 id="what-this-demonstrates">What This Demonstrates</h2>
-                <p>This project sits at the intersection of content design and systems thinking. It wasn't a traditional UX deliverable—there's no mockup or wireframe. But it reflects the same core skill: seeing a broken process, understanding the user need (accurate, timely content), and designing a solution that scales.</p>
-                <p>It also reflects a growing part of my practice: using technical skills (Python, data processing, API integrations) to solve content problems that pure writing can't fix.</p>
+                <h2 id="what-this-demonstrates">What Came Next</h2>
+                <p>There's no mockup or wireframe in this project, but it's the same job as any content design problem: figure out what the reader needs (accurate, current information) and fix whatever is getting in the way. Here, what was in the way was a process, and the fix was a script.</p>
+                <p>It was also where I started using Python and APIs to solve content problems that writing alone couldn't. That led to the <a href="authoring-plugin.html">help-content authoring plugin</a>, where a similar article, Delayed Acknowledgments, now updates itself on a schedule without anyone pasting anything.</p>
             </section>
 
             <footer class="project-footer">

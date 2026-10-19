@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Content Systems at Intuit - Designing AI-assisted content infrastructure">
+    <meta name="description" content="AI Content Systems at Intuit: structuring thousands of help articles so writers and support experts can search and reuse them">
     <title>AI Content Systems at Intuit - Nischal Kelwadkar</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/project.css">
@@ -30,10 +30,10 @@
     <article class="project-page">
         <div class="container">
             <a href="../index.html#work" class="back-link">← Back to Work</a>
-            
+
             <header class="project-header">
                 <h1>AI Content Systems at Intuit</h1>
-                <p class="project-subtitle">Designing AI-assisted content infrastructure to scale clarity, consistency, and access</p>
+                <p class="project-subtitle">Turning thousands of help articles into something writers and support experts could search and reuse</p>
                 <div class="project-meta">
                     <span class="meta-item"><strong>Client:</strong> Intuit ProTax Group</span>
                     <span class="meta-item"><strong>Year:</strong> 2023-Present</span>
@@ -45,90 +45,54 @@
                 <div class="project-hero-image">
                     <img src="../images/DesignMac.webp" alt="Design workspace" />
                 </div>
-                <p>As content ecosystems grow, the challenge shifts from writing individual pieces of content to maintaining consistency, accuracy, and accessibility at scale. At Intuit, I identified a gap between the volume of help content we had and the ability for teams—especially support and content creators—to quickly surface and reuse that information.</p>
-                <p>This project focuses on how I designed and implemented an AI-assisted content system that treats knowledge as infrastructure, not just documentation.</p>
+                <p>We had thousands of help articles and no good way to use them. Writers rewrote answers that already existed, and support experts spent too long hunting for the right one. I built a system that pulls all of that content into a structured form AI tools can work with, so people can find, compare, and reuse what we've already written.</p>
+                <p>A lot of what I've built since grew out of it.</p>
             </section>
 
             <section class="project-section">
                 <h2>Context</h2>
-                <p>Intuit's ProTax Group maintains thousands of external help articles supporting professional tax products. These articles are:</p>
-                <ul>
-                    <li>Authored over many years</li>
-                    <li>Owned by multiple teams</li>
-                    <li>Frequently updated due to tax law and product changes</li>
-                </ul>
-                <p>While the content existed, it was difficult for writers, support experts, and collaborators to efficiently search, synthesize, and reuse it—especially across products and regions.</p>
-                <p>At the same time, access to internal AI tools was uneven. Full-time employees had limited access to AI tooling, while many Tier 1 and Tier 2 support experts were contractors without access to those tools at all.</p>
+                <p>Intuit's ProTax Group maintains thousands of public help articles for its professional tax products. They were written over many years by different teams and change constantly as tax law and the products change.</p>
+                <p>The content was there, but searching and reusing it across products and regions was slow for writers and support experts alike. Access to AI tools was also uneven. Full-time employees had some, and many Tier 1 and Tier 2 support experts were contractors with none.</p>
             </section>
 
             <section class="project-section">
                 <h2>The Problem</h2>
-                <p>Teams struggled with:</p>
-                <ul>
-                    <li>Rewriting or duplicating existing help content</li>
-                    <li>Spending excessive time searching for authoritative answers</li>
-                    <li>Inconsistent language and guidance across products</li>
-                    <li>Limited access to AI tools for the people who needed them most</li>
-                </ul>
-                <p class="highlight">The core challenge wasn't a lack of content—it was a lack of structured, accessible systems for using it.</p>
+                <p>In practice, that meant people rewrote or duplicated content that already existed, spent too much time looking for the authoritative answer, and ended up with slightly different guidance for the same thing across products. The people who answer customers directly had the least access to tools that could help.</p>
+                <p class="highlight">We had plenty of content. What we didn't have was a structured way to search it and reuse it.</p>
             </section>
 
             <section class="project-section">
                 <h2>My Role</h2>
-                <p>I initiated and owned this project independently alongside my core responsibilities as a UX Content Designer.</p>
-                <p>My role included:</p>
-                <ul>
-                    <li>Identifying the content access and reuse gap</li>
-                    <li>Designing the system architecture for capturing and structuring content</li>
-                    <li>Building and maintaining scripts to ingest and organize content</li>
-                    <li>Creating AI-assisted workflows for writers and collaborators</li>
-                    <li>Partnering cross-functionally to explore scalable delivery via dashboards and Slack-based tools</li>
-                </ul>
+                <p>I started this on my own, on top of my regular content design work, and owned it from there. I spotted the gap, designed how content would be captured and structured, wrote and maintained the scripts that pull it in, set up the AI workflows for writers, and worked with other teams on ways to get it to support experts through dashboards and Slack.</p>
             </section>
 
             <section class="project-section">
                 <h2>The Solution</h2>
-                <p>I designed an AI-assisted content system with three core layers:</p>
-                
+                <p>The system has three parts.</p>
+
                 <div class="project-hero-image">
                     <img src="../images/design mac.webp" alt="Content design workspace" />
                 </div>
-                
-                <h3 id="content-capture">1. Content capture and structuring</h3>
-                <p>I built scripts to programmatically collect external help content across products, preserving metadata such as URLs, titles, and identifiers. Content was normalized and organized by product and use case.</p>
-                
-                <h3 id="ai-authoring">2. AI-assisted authoring and reuse</h3>
-                <p>The structured content was integrated into product-specific AI environments, enabling writers to quickly:</p>
-                <ul>
-                    <li>Locate relevant existing guidance</li>
-                    <li>Consolidate overlapping articles</li>
-                    <li>Draft updates with greater consistency and confidence</li>
-                </ul>
-                
-                <h3 id="expanded-access">3. Expanded access via internal tooling</h3>
-                <p>To address access limitations, I partnered with others exploring dashboards and Slack-based AI assistants—meeting support experts where they already worked, without requiring direct access to AI platforms.</p>
+
+                <h3 id="content-capture">1. Capturing and structuring the content</h3>
+                <p>I wrote scripts that collect our public help content across products, about 4,000 articles, and keep the metadata that makes it useful: URLs, titles, and IDs. The content is cleaned up and organized by product and use case.</p>
+
+                <h3 id="ai-authoring">2. Writing and reusing with AI</h3>
+                <p>That structured content went into product-specific AI workspaces. Writers could find existing guidance fast, spot overlapping articles to consolidate, and draft updates that matched what we'd already published. I also partnered with the TurboTax consumer team on a parallel setup for their article and video script writing.</p>
+
+                <h3 id="expanded-access">3. Getting it to support experts</h3>
+                <p>For the support experts without AI access, I worked with others on dashboards and Slack-based assistants, so they could get answers in the tools they already used.</p>
             </section>
 
             <section class="project-section">
                 <h2>Impact</h2>
-                <p>While this system began as a personal productivity tool, it grew into a shared capability that:</p>
-                <ul>
-                    <li>Reduced duplicated authoring effort</li>
-                    <li>Improved consistency across help content</li>
-                    <li>Enabled faster onboarding for new writers and collaborators</li>
-                    <li>Expanded access to authoritative answers for support experts</li>
-                </ul>
-                <p>The system has since been extended across multiple products and regions, including bilingual content support.</p>
+                <p>It started as a tool for my own work and became something the team relies on. Writers spend less time rewriting what already exists, guidance is more consistent across products, and new writers get up to speed faster. Support experts get to authoritative answers more easily.</p>
+                <p>It has since been extended to more products and regions, including Canadian products and bilingual (English and French) content. The same structured corpus later became the base for <a href="triple-a.html">Authoring Accelerator Agent</a> and the <a href="authoring-plugin.html">help-content authoring plugin</a>.</p>
             </section>
 
             <section class="project-section">
-                <h2>Why This Matters</h2>
-                <p>This project reflects how I approach AI in content design:</p>
-                <ul>
-                    <li>AI as <strong>infrastructure</strong>, not novelty</li>
-                    <li>Systems that respect real organizational constraints</li>
-                    <li>Design decisions grounded in how people actually work</li>
-                </ul>
+                <h2>What I Learned</h2>
+                <p>The useful part of AI here was the plumbing. Getting content into a clean, structured shape did more for the team than any single prompt. It also had to fit how Intuit works day to day, including who has access to what, or nobody would have used it.</p>
             </section>
 
             <footer class="project-footer">
