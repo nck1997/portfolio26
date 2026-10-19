@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Help-Content Authoring Plugin — AI tooling that lets Intuit's help-content writers edit the live knowledge base in plain English, with a human approval before anything publishes">
+    <title>Help-Content Authoring Plugin - Nischal Kelwadkar</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Nav -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">NISCHAL KELWADKAR</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#work">Work</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <article class="project-page">
+        <div class="container">
+            <a href="../index.html#work" class="back-link">← Back to Work</a>
+
+            <header class="project-header">
+                <h1>Help-Content Authoring Plugin</h1>
+                <p class="project-subtitle">Turning one-off article fixes into reviewed, repeatable workflows a whole writing team can run in plain English</p>
+                <div class="project-meta">
+                    <span class="meta-item"><strong>Client:</strong> Intuit Customer Success (TurboTax, Credit Karma, ProTax)</span>
+                    <span class="meta-item"><strong>Year:</strong> 2026</span>
+                    <span class="meta-item"><strong>Deliverables:</strong> Claude Code plugin (18 skills), edit pipeline, safety model, bulk-edit and scheduled automations, writer onboarding guides</span>
+                </div>
+            </header>
+
+            <section class="project-section">
+                <h2 id="overview">Overview</h2>
+                <!-- IMAGE: A finished run — the ticket → article → before/after table the plugin prints at the end of every job (internal names blurred) -->
+                <p>Intuit's help content lives in a knowledge base of more than 20,000 articles, notices, and reusable content blocks across TurboTax, Credit Karma, and the professional tax products. Writers maintained it one article at a time, by hand, in a CMS editor that was never built for bulk work.</p>
+                <p>I designed and built the plugin that changed that. Writers now ask Claude for what they need in plain English: "work this Jira ticket," "replace this phrase in every ProSeries article that mentions it," "add this screenshot to step 3." The plugin finds the articles, makes the change, checks it against brand and house standards, saves it as a Draft, proves the change landed, and shows a before/after table. Nothing publishes until a writer says yes.</p>
+                <p class="highlight">I'm a content designer, not an engineer. Nobody assigned this. I saw how much of the team's time went into mechanical edits, built the fix, and kept building until the whole team could use it.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="problem">The Problem</h2>
+                <p>Most help-content work isn't writing. It's maintenance: a product name changes, a tax law changes, a link breaks, an SME files a ticket asking for a sentence to be fixed in a dozen places. Each of those meant opening the CMS, finding every affected article, editing each one, and checking each one. A single edit took 3–5 minutes. A sweep across a product line took days, and things got missed. One sweep I ran later found a live article still describing a tax credit phase-out that had been repealed in 2022.</p>
+                <p>The CMS had no safe way to do this at scale, and the people who owned it were rightly cautious about anyone writing to production in bulk. So the real problem was two problems: make editing fast enough to matter, and make it safe enough that the platform team, my managers, and the writers themselves would trust it.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="timeline">How It Got Here</h2>
+                <!-- IMAGE: Simple timeline graphic of the five phases -->
+                <p>This didn't ship in one piece. It moved through five phases in about seven months, and each one was shaped by a constraint I didn't control.</p>
+                <p><strong>Phase 1 — A direct API integration (March–June).</strong> I connected Claude Code to the CMS's REST API, so Claude could read, search, and edit articles, with a human review on every write. An average edit dropped from 3–5 minutes to about 30 seconds, and batches ran 10+ articles a minute with verification. I agreed a governance model with the CMS's engineering team: Draft-only writes, manual publish, named operators, capped batches, and an edit-lock check before every write. I proved the lock check in testing with a second operator. Claude detected that a colleague had the article open, named them, and refused to write.</p>
+                <p><strong>Phase 2 — Shaping the official tool (June–July).</strong> Engineering's target state was their own AI connection to the CMS, delivered through an internal interface. Rather than fight that, I made sure nothing would be lost in the move. I wrote a prioritized capability inventory of everything my integration could do that the new tool needed on day one, plus a test plan with ground-truth match counts so incomplete search results would show up as a measurable gap.</p>
+                <p><strong>Phase 3 — Going direct (July–August).</strong> Instead of waiting on the interface, I connected Claude Code straight to the same MCP server underneath it. I worked through the authentication chain and a few platform bugs, took production live, and confirmed in a pilot that the team's existing access was already enough. No new permissions request needed.</p>
+                <p><strong>Phase 4 — A plugin for the team (September).</strong> I packaged my personal skills into a self-updating plugin, so a fix reached every teammate on their next run. I replaced an 8-step manual edit flow with a single command, ran a UAT with three writers, and shipped their fixes within days.</p>
+                <p><strong>Phase 5 — The registry and a hard cutoff (September–October).</strong> When we learned the direct connection would end on October 31, I moved the plugin to Intuit's new desktop access layer within a day, verified it on Mac and Windows, and folded the whole thing into Intuit's internal plugin registry as the Customer Success track of a shared plugin. One install, one place to fix things, and no writer left on a credential that stops working.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="how-it-works">How an Edit Works</h2>
+                <!-- IMAGE: Flow diagram — Start → Edit → Check → Ship (Draft) → Publish (writer's yes) → Report -->
+                <p>Every change runs through the same pipeline, whether a writer asked for one word or a hundred articles:</p>
+                <ul>
+                    <li><strong>Start.</strong> Resolve the article from any link a writer pastes, fetch the current Draft, and check whether someone else is editing it.</li>
+                    <li><strong>Edit.</strong> Make the change, then run a brand, house-style, and AI-readiness review over the whole article, fixing clear-cut issues in the same Draft.</li>
+                    <li><strong>Check.</strong> Run mechanical standards checks: heading levels, sentence case, link formats, alt text, banners instead of bold notes, and more.</li>
+                    <li><strong>Ship.</strong> Rebuild the payload from a fresh fetch, save the Draft with an author note, then re-read both the Draft and the live version to prove the change landed. If anyone changed the article in the meantime, it stops.</li>
+                    <li><strong>Publish.</strong> Only after the writer says yes.</li>
+                    <li><strong>Report.</strong> Every run ends with one table: ticket → article → before/after, plus anything still blocked. After publish, the SME gets a plain-language note with the customer-facing link and the ticket is closed.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 id="safety">Designing the Safety Model</h2>
+                <p>The most important design work on this project wasn't the interface. It was deciding where a human has to say yes, and where they shouldn't have to.</p>
+                <p>Early versions stopped constantly for approvals that protected nothing, and writers stopped trusting the prompts because there were too many of them. So I designed it around <strong>one human gate</strong>: publishing, archiving, and multi-article bulk writes stop for a yes. Everything else runs. Drafts, receipts, and rollback are the safety net.</p>
+                <ul>
+                    <li>Every Draft and publish is recorded under the writer's own name. No shared credentials.</li>
+                    <li>Writes only go through the pipeline, never a raw update call, because the protection is in the payload the pipeline builds and verifies.</li>
+                    <li>Image uploads ride on the article's publish approval, because they're a public write.</li>
+                    <li>If a call is denied, the plugin never retries through a different tool. A security review treats that as evasion, and so do I.</li>
+                    <li>Failures report privately to the writer, not in team channels.</li>
+                </ul>
+                <p class="highlight">Getting a human-in-the-loop system right is a content design problem: what the person is asked, when, and how often. Ask too much and the approvals become noise. Ask too little and nobody trusts the system.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="bulk">Bulk Edits and Automations</h2>
+                <!-- IMAGE: Receipt CSV from a bulk run (sanitized) -->
+                <p>Once single edits were reliable, scale was the point. A writer can hand the plugin a CSV of changes, including find-and-replace across articles, several edits to one article, tag and SEO changes, or bulk creation of new articles. It runs the whole batch without stopping on a bad row, then produces a receipt for review. A tax-law workflow takes structured work orders from another team's impact analysis and lands one Draft per affected article.</p>
+                <p>Some articles don't need a writer at all. The Delayed Acknowledgments article, which tells accountants which state e-file acknowledgments are running late, now rebuilds and publishes itself from the source data every day, with an hourly check that keeps known-issue banners current. New issues are only ever proposed, never auto-published, and a cloud backup posts the update to the team even when my laptop is off.</p>
+            </section>
+
+            <section class="project-section">
+                <h2 id="onboarding">Making It Usable for Non-technical Writers</h2>
+                <p>My teammates are writers, not developers, and the first time some of them saw raw terminal output it alarmed them. So a lot of the work went into the experience around the tool:</p>
+                <ul>
+                    <li>A non-technical onboarding wizard and an interactive setup guide, including a tab that explains why the tool exists and what it changes.</li>
+                    <li>Plain-language sign-in repair. When authentication fails, the plugin prints click-by-click steps a writer can follow, and retries known transient failures itself instead of blaming the user.</li>
+                    <li>A Chrome extension that adds an "Open in Editor" button to any help article, so writers can jump from the public page to the right place to edit it.</li>
+                    <li>A routing hook so plain requests like "execute this Jira" reach the plugin even when a writer doesn't name it. I added it after a teammate's request never triggered the plugin at all.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 id="impact">Impact</h2>
+                <ul>
+                    <li>20,700+ help articles, notices, and reusable blocks reachable by the tooling across Intuit's consumer, small-business, and professional tax help</li>
+                    <li>A single edit cut from 3–5 minutes by hand to about 30 seconds; an 8-step manual flow replaced with one command</li>
+                    <li>Writers on Mac and Windows editing production safely with no credentials of their own beyond their normal sign-in</li>
+                    <li>The team moved off a retiring access path before a hard October 31 cutoff</li>
+                    <li>Adopted as the Customer Success track of a shared plugin in Intuit's internal plugin registry, backed by an automated self-test suite</li>
+                    <li>149+ articles updated through the plugin in its first week of team use (a verified minimum, before content refresh season began)</li>
+                    <li>An estimated ~1,060 hours a year saved on the team's top content refresh use cases, based on teammates' task estimates from prior years</li>
+                    <li>Team Rockstar award, August 2026</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2 id="what-this-demonstrates">What This Demonstrates</h2>
+                <p>Content design at scale is increasingly about the systems behind the words: how content gets changed, who checks it, and what keeps it accurate after it ships. This project is that, end to end. The skills are written instructions. The standards checks encode the style guide. The approval model is a decision about what a person is asked and when.</p>
+                <p>It's also how I like to work. Every phase of this hit a wall I didn't control: access was revoked, the official tool wasn't ready, a connection was being retired. Each time, the answer was to keep the work moving and bring the right people along, not to wait.</p>
+                <p class="highlight">I didn't build a tool for myself. I built the way my team edits content.</p>
+            </section>
+
+            <footer class="project-footer">
+                <a href="../index.html#work" class="back-link-bottom">← Back to Work</a>
+            </footer>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nischal Kelwadkar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
